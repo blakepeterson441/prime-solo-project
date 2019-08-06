@@ -16,7 +16,7 @@ const styles = {
 
 class OverallSkill extends Component {
   state = {
-    selectedValue: 'a',
+    selectedValue: '1',
   };
 
   handleChange = event => {
@@ -30,81 +30,81 @@ class OverallSkill extends Component {
       <><h3>Overall Skills</h3>
       <div>
         <Radio
-          checked={this.state.selectedValue === 'a'}
+          checked={this.state.selectedValue === '1'}
           onChange={this.handleChange}
-          value="a"
+          value="1"
           color="default"
           name="radio-button-demo"
           aria-label="A"
         />
         <Radio
-          checked={this.state.selectedValue === 'b'}
+          checked={this.state.selectedValue === '2'}
           onChange={this.handleChange}
-          value="b"
+          value="2"
           color="default"
           name="radio-button-demo"
           aria-label="B"
         />
         <Radio
-          checked={this.state.selectedValue === 'c'}
+          checked={this.state.selectedValue === '3'}
           onChange={this.handleChange}
-          value="c"
+          value="3"
           color="default"
           name="radio-button-demo"
           aria-label="C"
         />
         <Radio
-          checked={this.state.selectedValue === 'd'}
+          checked={this.state.selectedValue === '4'}
           onChange={this.handleChange}
-          value="d"
+          value="4"
           color="default"
           name="radio-button-demo"
           aria-label="D"
         />
         <Radio
-          checked={this.state.selectedValue === 'e'}
+          checked={this.state.selectedValue === '5'}
           onChange={this.handleChange}
-          value="e"
+          value="5"
           color="default"
           name="radio-button-demo"
           aria-label="E"
         />
         <Radio
-          checked={this.state.selectedValue === 'f'}
+          checked={this.state.selectedValue === '6'}
           onChange={this.handleChange}
-          value="f"
+          value="6"
           color="default"
           name="radio-button-demo"
           aria-label="F"
         />
         <Radio
-          checked={this.state.selectedValue === 'g'}
+          checked={this.state.selectedValue === '7'}
           onChange={this.handleChange}
-          value="g"
+          value="7"
           color="default"
           name="radio-button-demo"
           aria-label="G"
         />
         <Radio
-          checked={this.state.selectedValue === 'h'}
+          checked={this.state.selectedValue === '8'}
           onChange={this.handleChange}
-          value="h"
+          value="8"
           color="default"
           name="radio-button-demo"
           aria-label="H"
         />
         <Radio
-          checked={this.state.selectedValue === 'i'}
+          checked={this.state.selectedValue === '9'}
           onChange={this.handleChange}
-          value="i"
+          value="9"
           color="default"
           name="radio-button-demo"
           aria-label="I"
         />
         <Radio
-          checked={this.state.selectedValue === 'j'}
+          checked={this.state.selectedValue === '10'}
           onChange={this.handleChange}
-          value="j"
+          value="10"
           color="default"
           name="radio-button-demo"
           aria-label="J"
