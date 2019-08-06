@@ -1,122 +1,44 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import green from '@material-ui/core/colors/green';
-import Radio from '@material-ui/core/Radio';
-
-const styles = {
-  root: {
-    color: green[600],
-    '&$checked': {
-      color: green[500],
-    },
-  },
-  checked: {},
-};
 
 class AggressionSkill extends Component {
   state = {
-    selectedValue: '1',
+    value: '',
   };
 
   handleChange = event => {
-    this.setState({ selectedValue: event.target.value });
+    this.setState({ value: event.target.value });
   };
 
   render() {
-    const { classes } = this.props;
+    
 
     return (
-      <><h3>Overall Skills {this.props.state}</h3>
+      <><h3>Aggression Skills {this.props.state}</h3>
       <div>
-        <Radio
-          checked={this.state.selectedValue === '1'}
-          onChange={this.handleChange}
-          value="1"
-          color="default"
-          name="radio-button-demo"
-          aria-label="A"
-        />
-        <Radio
-          checked={this.state.selectedValue === '2'}
-          onChange={this.handleChange}
-          value="2"
-          color="default"
-          name="radio-button-demo"
-          aria-label="B"
-        />
-        <Radio
-          checked={this.state.selectedValue === '3'}
-          onChange={this.handleChange}
-          value="3"
-          color="default"
-          name="radio-button-demo"
-          aria-label="C"
-        />
-        <Radio
-          checked={this.state.selectedValue === '4'}
-          onChange={this.handleChange}
-          value="4"
-          color="default"
-          name="radio-button-demo"
-          aria-label="D"
-        />
-        <Radio
-          checked={this.state.selectedValue === '5'}
-          onChange={this.handleChange}
-          value="5"
-          color="default"
-          name="radio-button-demo"
-          aria-label="E"
-        />
-        <Radio
-          checked={this.state.selectedValue === '6'}
-          onChange={this.handleChange}
-          value="6"
-          color="default"
-          name="radio-button-demo"
-          aria-label="F"
-        />
-        <Radio
-          checked={this.state.selectedValue === '7'}
-          onChange={this.handleChange}
-          value="7"
-          color="default"
-          name="radio-button-demo"
-          aria-label="G"
-        />
-        <Radio
-          checked={this.state.selectedValue === '8'}
-          onChange={this.handleChange}
-          value="8"
-          color="default"
-          name="radio-button-demo"
-          aria-label="H"
-        />
-        <Radio
-          checked={this.state.selectedValue === '9'}
-          onChange={this.handleChange}
-          value="9"
-          color="default"
-          name="radio-button-demo"
-          aria-label="I"
-        />
-        <Radio
-          checked={this.state.selectedValue === '10'}
-          onChange={this.handleChange}
-          value="10"
-          color="default"
-          name="radio-button-demo"
-          aria-label="J"
-        />
+        <input type="radio" name="aggressionValue" value='1' defaultChecked
+                    onChange={(event) => this.handleChange(event)} />1
+        <input type="radio" name="aggressionValue" value='2'
+                    onChange={(event) => this.handleChange(event)} />2
+        <input type="radio" name="aggressionValue" value="3" 
+                    onChange={(event) => this.handleChange(event)} />3
+        <input type="radio" name="aggressionValue" value="4"
+                    onChange={(event) => this.handleChange(event)} />4
+        <input type="radio" name="aggressionValue" value="5" 
+                    onChange={(event) => this.handleChange(event)} />5
+        <input type="radio" name="aggressionValue" value="6"
+                    onChange={(event) => this.handleChange(event)} />6
+        <input type="radio" name="aggressionValue" value="7" 
+                    onChange={(event) => this.handleChange(event)} />7
+        <input type="radio" name="aggressionValue" value="8"
+                    onChange={(event) => this.handleChange(event)} />8
+        <input type="radio" name="aggressionValue" value="9" 
+                    onChange={(event) => this.handleChange(event)} />9
+        <input type="radio" name="aggressionValue" value="10"
+                    onChange={(event) => this.handleChange(event)} />10
       </div>
       </>
     );
   }
 }
 
-AggressionSkill.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(AggressionSkill);
+export default AggressionSkill;

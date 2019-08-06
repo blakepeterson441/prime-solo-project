@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import './SearchPage.css';
 import OverallSkill from '../OverallSkill/OverallSkill';
 import OffensiveSkill from '../OffensiveSkill/OffensiveSkill';
@@ -20,6 +21,7 @@ class SearchPage extends Component {
     
     this.showMenu = this.showMenu.bind(this);
   }
+
   
   showMenu(event) {
     event.preventDefault();
@@ -28,6 +30,12 @@ class SearchPage extends Component {
       showMenu: true,
     });
   }
+
+  handleSubmit = (event) => {
+       this.props.dispatch({
+         type: 'FETCH_SKILLS'
+       })
+    }
 
   render() {
     return (
@@ -80,9 +88,10 @@ class SearchPage extends Component {
       <OffensiveSkill />
       <DefensiveSkill />
       <AggressionSkill />
+      <button onClick={this.handleSubmit}>Submit</button>
       </>
     );
   }
 }
 
-export default SearchPage;
+export default connect()(SearchPage);
