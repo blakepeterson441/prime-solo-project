@@ -14,7 +14,7 @@ const styles = {
   checked: {},
 };
 
-class OverallSkill extends Component {
+class DefensiveSkill extends Component {
   state = {
     selectedValue: 'a',
   };
@@ -27,7 +27,7 @@ class OverallSkill extends Component {
     const { classes } = this.props;
 
     return (
-      <><h3>Overall Skills</h3>
+      <><h3>Defensive Skills</h3>
       <div>
         <Radio
           checked={this.state.selectedValue === 'a'}
@@ -115,8 +115,8 @@ class OverallSkill extends Component {
   }
 }
 
-OverallSkill.propTypes = {
+DefensiveSkill.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(OverallSkill);
+export default withStyles(styles)(DefensiveSkill);

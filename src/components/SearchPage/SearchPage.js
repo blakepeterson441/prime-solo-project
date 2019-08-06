@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import './SearchPage.css';
 import OverallSkill from '../OverallSkill/OverallSkill';
+import OffensiveSkill from '../OffensiveSkill/OffensiveSkill';
+import DefensiveSkill from '../DefensiveSkill/DefensiveSkill';
+import AggressionSkill from '../AggressionSkill/AggressionSkill';
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -74,6 +77,9 @@ class SearchPage extends Component {
         }
       </div>
       <OverallSkill />
+      <OffensiveSkill />
+      <DefensiveSkill />
+      <AggressionSkill />
       </>
     );
   }
