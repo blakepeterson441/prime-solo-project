@@ -5,16 +5,16 @@ import React, {Component} from 'react';
 // It doesn't dispatch any redux actions or display any part of redux state
 // or even care what the redux state is, so it doesn't need 'connect()'
 
-class AboutPage extends Component {
+class FriendsPage extends Component {
   render(){
     return(
       <div>
         <p>
-          This about page is for anyone to read!
+          Friends Page!
         </p>
       </div>
     );
   }
 }
 
-export default AboutPage;
+export default FriendsPage;
