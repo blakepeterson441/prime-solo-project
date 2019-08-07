@@ -6,6 +6,7 @@ class DefensiveSkill extends Component {
   };
 
   handleChange = event => {
+    console.log('defensiveSkill event.target.value', event.target.value);
     this.setState({ value: event.target.value });
   };
 

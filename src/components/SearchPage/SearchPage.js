@@ -5,6 +5,7 @@ import OverallSkill from '../OverallSkill/OverallSkill';
 import OffensiveSkill from '../OffensiveSkill/OffensiveSkill';
 import DefensiveSkill from '../DefensiveSkill/DefensiveSkill';
 import AggressionSkill from '../AggressionSkill/AggressionSkill';
+import DropDownGames from '../DropDownGames/DropDownGames';
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -12,24 +13,6 @@ import AggressionSkill from '../AggressionSkill/AggressionSkill';
 // or even care what the redux state is, so it doesn't need 'connect()'
 
 class SearchPage extends Component {
-  constructor() {
-    super();
-    
-    this.state = {
-      showMenu: false,
-    }
-    
-    this.showMenu = this.showMenu.bind(this);
-  }
-
-  
-  showMenu(event) {
-    event.preventDefault();
-    
-    this.setState({
-      showMenu: true,
-    });
-  }
 
   handleSubmit = (event) => {
        this.props.dispatch({
@@ -40,50 +23,7 @@ class SearchPage extends Component {
   render() {
     return (
       <>
-      <div>
-        <h1>Search for Players</h1>
-        <button 
-          style={{
-            fontSize: '2rem',
-            height: 50,
-            width: 240
-          }}
-          onClick={this.showMenu}
-        >
-          Select Game
-        </button>
-        
-        {
-          this.state.showMenu
-            ? (
-              <div className="menu">
-                <button
-                  style={{
-                    height: 240,
-                    width: 160,
-                    backgroundImage: `url(https://microplay.com/media/catalog/product/cache/f3bf28a13af81a177e7f29529d01f858/6/2/6251_cover_1.jpg)`,
-                    backgroundPosition: 'center',
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat'
-                  }}></button>
-                <button
-                  style={{
-                    height: 240,
-                    width: 160,
-                    backgroundImage: `url(https://images.g2a.com/newlayout/323x433/1x1x0/e1f2e4cc3323/5b4e17bbae653a58bd4ef8c7)`,
-                    backgroundPosition: 'center',
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat'
-                  }}></button>
-              </div>
-            
-
-            )
-            : (
-              null
-            )
-        }
-      </div>
+      <DropDownGames />
       <OverallSkill />
       <OffensiveSkill />
       <DefensiveSkill />

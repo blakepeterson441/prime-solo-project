@@ -6,6 +6,7 @@ class AggressionSkill extends Component {
   };
 
   handleChange = event => {
+    console.log('aggressionSkill event.target.value', event.target.value);
     this.setState({ value: event.target.value });
   };
 

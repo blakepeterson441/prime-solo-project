@@ -6,6 +6,7 @@ class OverallSkill extends Component {
   };
 
   handleChange = event => {
+    console.log('overallSkill event.target.value', event.target.value);
     this.setState({ value: event.target.value });
   };
 
