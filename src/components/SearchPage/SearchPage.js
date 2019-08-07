@@ -10,12 +10,6 @@ import DropDownGames from '../DropDownGames/DropDownGames';
 // or even care what the redux state is, so it doesn't need 'connect()'
 
 class SearchPage extends Component {
-
-  componentDidMount(){
-    this.props.dispatch({
-      type: 'FETCH_SKILLS'
-    })
-  }
   
 
   render() {

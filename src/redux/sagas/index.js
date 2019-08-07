@@ -11,7 +11,7 @@ import fetchSkills from "./fetchSkills";
 // the registration triggers a login
 // and login triggers setting the user
 export default function* rootSaga() {
-  yield takeEvery('FETCH_SKILLS', fetchSkills)
+  yield takeEvery('SEARCH_SKILLS', fetchSkills)
   yield all([
     loginSaga(),
     registrationSaga(),
