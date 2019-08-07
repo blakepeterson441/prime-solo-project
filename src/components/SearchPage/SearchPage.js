@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import './SearchPage.css';
-import OverallSkill from '../OverallSkill/OverallSkill';
-import OffensiveSkill from '../OffensiveSkill/OffensiveSkill';
-import DefensiveSkill from '../DefensiveSkill/DefensiveSkill';
-import AggressionSkill from '../AggressionSkill/AggressionSkill';
+import AllSkill from '../AllSkill/AllSkill';
 import DropDownGames from '../DropDownGames/DropDownGames';
 
 // This is one of our simplest components
@@ -14,23 +11,10 @@ import DropDownGames from '../DropDownGames/DropDownGames';
 
 class SearchPage extends Component {
 
-  state = {
-    skill: {
-      overallSkill: '',
-    }
-  }
-
-  handleSubmit = (event) => {
+  componentDidMount(){
     this.props.dispatch({
       type: 'FETCH_SKILLS'
     })
-  }
-
-  handleChangeFor = (propertyName) => (event) => {
-    this.setState({
-      overallSkill: this.state.overallSkill,
-      [propertyName]: event.target.value,
-    });
   }
   
 
@@ -38,13 +22,7 @@ class SearchPage extends Component {
     return (
       <>
       <DropDownGames />
-      <OverallSkill 
-        handleChangeFor={this.handleChangeFor}
-      />
-      <OffensiveSkill />
-      <DefensiveSkill />
-      <AggressionSkill />
-      <button onClick={this.handleSubmit}>Submit</button>
+      <AllSkill />
       </>
     );
   }
