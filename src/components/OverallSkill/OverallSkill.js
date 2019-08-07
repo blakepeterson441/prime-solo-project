@@ -17,9 +17,9 @@ class OverallSkill extends Component {
       <><h3>Overall Skills {this.props.state}</h3>
       <div>
         <input type="radio" name="overallValue" value='1' defaultChecked
-                    onChange={(event) => this.handleChange(event)} />1
+                    onChange={this.props.handleChangeFor('overallSkill')} />1
         <input type="radio" name="overallValue" value='2'
-                    onChange={(event) => this.handleChange(event)} />2
+                    onChange={this.props.handleChangeFor('overallValue')} />2
         <input type="radio" name="overallValue" value="3" 
                     onChange={(event) => this.handleChange(event)} />3
         <input type="radio" name="overallValue" value="4"

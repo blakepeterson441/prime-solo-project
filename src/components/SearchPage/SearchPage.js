@@ -14,17 +14,33 @@ import DropDownGames from '../DropDownGames/DropDownGames';
 
 class SearchPage extends Component {
 
-  handleSubmit = (event) => {
-       this.props.dispatch({
-         type: 'FETCH_SKILLS'
-       })
+  state = {
+    skill: {
+      overallSkill: '',
     }
+  }
+
+  handleSubmit = (event) => {
+    this.props.dispatch({
+      type: 'FETCH_SKILLS'
+    })
+  }
+
+  handleChangeFor = (propertyName) => (event) => {
+    this.setState({
+      overallSkill: this.state.overallSkill,
+      [propertyName]: event.target.value,
+    });
+  }
+  
 
   render() {
     return (
       <>
       <DropDownGames />
-      <OverallSkill />
+      <OverallSkill 
+        handleChangeFor={this.handleChangeFor}
+      />
       <OffensiveSkill />
       <DefensiveSkill />
       <AggressionSkill />
