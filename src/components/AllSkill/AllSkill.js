@@ -6,8 +6,28 @@ class AllSkill extends Component {
     overall: '',
     offensive: '',
     defensive: '',
-    aggression: ''
+    aggression: '',
+    game: '',
   };
+
+  constructor() {
+    super();
+
+    this.state = {
+      showMenu: false,
+    }
+
+    this.showMenu = this.showMenu.bind(this);
+  }
+
+
+  showMenu(event) {
+    event.preventDefault();
+
+    this.setState({
+      showMenu: true,
+    });
+  }
 
   handleChangeFor = (propertyName, event) => {
     this.setState({
@@ -27,7 +47,49 @@ class AllSkill extends Component {
   render() {
     
     return (
-      <><h3>Overall Skills {this.props.state}</h3>
+      <><div>
+        <h1>Search for Players</h1>
+        <button 
+          style={{
+            fontSize: '2rem',
+            height: 50,
+            width: 240
+          }}
+          onClick={this.showMenu}>
+          Select Game </button>
+        {
+          this.state.showMenu
+            ? (
+              <div className="menu">
+                <button value='Rocket League' onClick={(event) => this.handleChangeFor('game', event)}
+                  style={{
+                    height: 240,
+                    width: 160,
+                    backgroundImage: `url(https://microplay.com/media/catalog/product/cache/f3bf28a13af81a177e7f29529d01f858/6/2/6251_cover_1.jpg)`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat'
+                  }}></button>
+                <button value='NBA' onClick={(event) => this.handleChangeFor('game', event)}
+                  style={{
+                    height: 240,
+                    width: 160,
+                    backgroundImage: `url(https://images.g2a.com/newlayout/323x433/1x1x0/e1f2e4cc3323/5b4e17bbae653a58bd4ef8c7)`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat'
+                  }}></button>
+                <br />
+                {JSON.stringify(this.state.game)}
+              </div>
+            )
+            : (
+              null
+            )
+        }
+      </div>
+      
+      <h3>Overall Skills {this.props.state}</h3>
       {JSON.stringify(this.state.overall)}
       <div>
         <input type="radio" name="overallValue" value='1' defaultChecked
