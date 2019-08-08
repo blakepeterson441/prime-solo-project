@@ -18,6 +18,7 @@ import ProfilePage from '../ProfilePage/ProfilePage';
 import SearchPage from '../SearchPage/SearchPage';
 import EditPage from '../EditPage/EditPage';
 import FriendsPage from '../FriendsPage/FriendsPage';
+import PlayersToAdd from '../PlayersToAdd/PlayersToAdd';
 
 import './App.css';
 
@@ -69,6 +70,12 @@ class App extends Component {
               exact
               path="/search"
               component={SearchPage}
+            />
+
+            <ProtectedRoute
+              exact
+              path="/players"
+              component={PlayersToAdd}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />

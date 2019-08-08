@@ -200,4 +200,8 @@ class SearchPage extends Component {
   }
 }
 
-export default connect()(SearchPage);
+const mapStateToProps = (reduxStore) => ({
+  reduxStore
+})
+
+export default connect(mapStateToProps)(SearchPage);
