@@ -10,11 +10,13 @@ import './SearchPage.css';
 class SearchPage extends Component {
 
   state = {
-    overall: '',
-    offensive: '',
-    defensive: '',
-    aggression: '',
-    game: '',
+    playerSkill: {
+      overall: '',
+      offensive: '',
+      defensive: '',
+      aggression: '',
+      game: '',
+  }
   };
 
   constructor() {
@@ -37,9 +39,13 @@ class SearchPage extends Component {
   }
 
   handleChangeFor = (propertyName, event) => {
+    console.log('handleChangeFor event.target.value', event.target.value);
+    
     this.setState({
-      ...this.state,
+      playerSkill:{
+      ...this.state.playerSkill,
       [propertyName]: event.target.value
+      }
     })
   }
 
@@ -47,7 +53,7 @@ class SearchPage extends Component {
     console.log('clicked handleSubmit');
     this.props.dispatch({
       type: 'SEARCH_SKILLS',
-      payload: this.state
+      payload: this.state.playerSkill
     })
     this.props.history.push('/players');
   }
@@ -97,8 +103,8 @@ class SearchPage extends Component {
         }
       </div>
       
-      <h3>Overall Skills {this.props.state}</h3>
-      {JSON.stringify(this.state.overall)}
+      <h3>Overall Skills</h3>
+      {/* {JSON.stringify(this.state.playerSkill.overall)} */}
       <div>
         <input type="radio" name="overallValue" value='1' defaultChecked
                     onChange={(event) => this.handleChangeFor('overall', event)} />1

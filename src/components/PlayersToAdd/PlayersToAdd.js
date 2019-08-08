@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import PlayerList from '../PlayerList/PlayerList';
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -8,10 +9,21 @@ import {connect} from 'react-redux';
 
 class PlayersToAdd extends Component {
 
+  componentDidMount = () => {
+      console.log('componentDidMount');
+      this.props.dispatch({
+          type: 'SEARCH_PLAYERS',
+          payload: this.state
+      })
+  }
+
   render() {
     return (
         <>
-            <ul>    
+            <ul> 
+                {this.props.reduxStore.setSkillsReducer.map( (player, index) => 
+                    <PlayerList player={player} key={index}/>
+                )}  
             </ul>
         </>
     );
