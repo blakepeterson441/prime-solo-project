@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import './SearchPage.css';
-//import AllSkill from '../AllSkill/AllSkill';
-
-// import DropDownGames from '../DropDownGames/DropDownGames';
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -52,6 +49,7 @@ class SearchPage extends Component {
       type: 'SEARCH_SKILLS',
       payload: this.state
     })
+    this.props.history.push('/players');
   }
 
   render() {
