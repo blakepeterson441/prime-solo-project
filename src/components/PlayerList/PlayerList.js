@@ -7,17 +7,21 @@ class PlayerList extends Component {
         selectButton: true,
     };
 
+    addPlayer = () => {
+        console.log('addPlayer');
+    }
+
     render() {
         return (
             <>
                 <li>
                     <div>
-                        <h3>{this.props.username}</h3>
-                        <p>{this.props.game}</p>
-                        <p>{this.props.overall}</p>
-                        <p>{this.props.offensive}</p>
-                        <p>{this.props.defensive}</p>
-                        <p>{this.props.aggression}</p>
+                        <p>Username: <b>{this.props.player.username}</b></p>
+                        <p>Game: <b>{this.props.player.name}</b></p>
+                        <p>Overall Skill: <b>{this.props.player.overall_skill}</b></p>
+                        <p>Offensive Skill: <b>{this.props.player.offensive_skill}</b></p>
+                        <p>Defensive Skill: <b>{this.props.player.defensive_skill}</b></p>
+                        <p>Aggression: <b>{this.props.player.aggression}</b></p>
                     </div>
                    <button onClick={this.addPlayer}>Add</button>
                 </li>

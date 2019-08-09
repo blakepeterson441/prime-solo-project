@@ -50,7 +50,7 @@ class SearchPage extends Component {
   }
 
   handleSubmit = () => {
-    console.log('clicked handleSubmit');
+    console.log('clicked handleSubmit', this.state.playerSkill);
     this.props.dispatch({
       type: 'SEARCH_SKILLS',
       payload: this.state.playerSkill
