@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import FriendsList from '../FriendsList/FriendsList';
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -6,15 +8,23 @@ import React, {Component} from 'react';
 // or even care what the redux state is, so it doesn't need 'connect()'
 
 class FriendsPage extends Component {
+
   render(){
     return(
-      <div>
-        <p>
-          Friends Page!
-        </p>
-      </div>
+      <>
+      <p>hi</p>
+        <ul>
+          {this.props.reduxStore.setSkillsReducer.map( (player, index) => 
+                    <FriendsList player={player} key={index}/>
+                )}  
+        </ul>
+      </>
     );
   }
 }
 
-export default FriendsPage;
+const mapStateToProps = (reduxStore) => ({
+  reduxStore
+})
+
+export default connect(mapStateToProps)(FriendsPage);
