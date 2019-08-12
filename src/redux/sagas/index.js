@@ -14,6 +14,7 @@ import fetchSkills from "./fetchSkills";
 // and login triggers setting the user
 export default function* rootSaga() {
   yield takeEvery('SEARCH_SKILLS', fetchSkills);
+  //yield takeEvery('SEARCH_FRIENDS', fetchFriends);
   // yield takeEvery('SEARCH_PLAYERS', fetchPlayers);
   yield all([
     loginSaga(),

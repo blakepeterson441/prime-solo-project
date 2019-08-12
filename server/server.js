@@ -5,6 +5,7 @@ const pool = require('./modules/pool');
 const app = express();
 const bodyParser = require('body-parser');
 const sessionMiddleware = require('./modules/session-middleware');
+const { rejectUnauthenticated } = require('./modules/authentication-middleware');
 
 const passport = require('./strategies/user.strategy');
 
@@ -46,6 +47,24 @@ app.get('/skills', (req, res) => {
       res.sendStatus(500);
     }
   );
+});
+
+app.get('/friends', rejectUnauthenticated, (req, res) => {
+  console.log('/friends', req.user);
+  const sqlText = `SELECT friends.id, friends.user_id_one, friends.user_id_two, friends.approved, users.username
+                    FROM friends
+                    JOIN users ON users.id = friends.user_id_two
+                    WHERE friends.user_id_one = $1;`
+  const sqlValues = [req.user.id]
+  pool.query(sqlText, sqlValues)
+  .then(response => {
+    res.send(response.rows)
+  })
+  .catch(error =>{
+    console.log('error getting friends', error);
+    res.sendStatus(500);
+  })
+  
 });
 
 // Serve static files
