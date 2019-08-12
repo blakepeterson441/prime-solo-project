@@ -51,10 +51,13 @@ app.get('/skills', (req, res) => {
 
 app.get('/friends', rejectUnauthenticated, (req, res) => {
   console.log('/friends', req.user);
-  const sqlText = `SELECT friends.id, friends.user_id_one, friends.user_id_two, friends.approved, users.username
-                    FROM friends
-                    JOIN users ON users.id = friends.user_id_two
-                    WHERE friends.user_id_one = $1;`
+  const sqlText = `(select username, friends.user_id_two as friend_ID from "users" 
+                        join friends on friends.user_id_two = "users".id where 
+                        friends.user_id_one = $1 and approved = 'true')
+                        union
+                        (select username, friends.user_id_one as friend_ID from 
+                        "users" join friends on friends.user_id_one = "users".id 
+                        where friends.user_id_two = $1 and approved = 'true');`
   const sqlValues = [req.user.id]
   pool.query(sqlText, sqlValues)
   .then(response => {
