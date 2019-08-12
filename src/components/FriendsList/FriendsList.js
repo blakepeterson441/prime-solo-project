@@ -11,6 +11,7 @@ class FriendsList extends Component {
         return (
             <>
                 <li>
+                    <h2>Friends</h2>
                     <div>
                         <p>Username: <b>{this.props.friend.username}</b></p>
                     </div>

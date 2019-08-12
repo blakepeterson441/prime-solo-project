@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import FriendsList from '../FriendsList/FriendsList';
+import RequestsList from '../RequestsList/RequestsList';
 
 class FriendsPage extends Component {
 
@@ -10,16 +11,22 @@ class FriendsPage extends Component {
       type: 'SEARCH_FRIENDS',
       payload: this.props.reduxStore.user.id
     })
+    this.props.dispatch({
+      type: 'SEARCH_REQUESTS',
+      payload: this.props.reduxStore.user.id
+    })
 
   }
 
   render(){
     return(
       <>
-      <p>hi</p>
         <ul>
           {this.props.reduxStore.showFriendsReducer.map( (friend, index) => 
                     <FriendsList friend={friend} key={index}/>
+                )}  
+          {this.props.reduxStore.showRequestsReducer.map( (friend, index) => 
+                    <RequestsList friend={friend} key={index}/>
                 )}  
         </ul>
       </>

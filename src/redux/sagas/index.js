@@ -4,6 +4,7 @@ import registrationSaga from './registrationSaga';
 import userSaga from './userSaga';
 import fetchSkills from "./fetchSkills";
 import fetchFriends from './fetchFriends';
+import fetchRequests from './fetchRequests';
 // import fetchPlayers from "./fetchPlayers";
 
 // rootSaga is the primary saga.
@@ -16,6 +17,7 @@ import fetchFriends from './fetchFriends';
 export default function* rootSaga() {
   yield takeEvery('SEARCH_SKILLS', fetchSkills);
   yield takeEvery('SEARCH_FRIENDS', fetchFriends);
+  yield takeEvery('SEARCH_REQUESTS', fetchRequests);
   // yield takeEvery('SEARCH_PLAYERS', fetchPlayers);
   yield all([
     loginSaga(),
