@@ -3,12 +3,6 @@ import {connect} from 'react-redux';
 
 class FriendsList extends Component {
 
-    state = {
-        friend: {
-            username: '',
-        }
-    };
-
     deletePlayer = () => {
         console.log('deletePlayer');
     }
