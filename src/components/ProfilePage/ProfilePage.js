@@ -1,54 +1,206 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-//import LogOutButton from '../LogOutButton/LogOutButton';
 
-// this could also be written with destructuring parameters as:
-// const ProfilePage = ({ user }) => (
-// and then instead of `props.user.username` you could use `user.username`
-
-// const ProfilePage = (props) => (
-//   <div>
-//     <h1 id="welcome">
-//       Welcome, { props.user.username }!
-//     </h1>
-//     <p>Your ID is: {props.user.id}</p>
-//     {/* <LogOutButton className="log-in" /> */}
-//   </div>
-// );
 
 class ProfilePage extends Component {
 
-  render(){
-    return(
-      <>
-      <div>
-      <h1>
-        Welcome, { this.props.friend }!
-      </h1>
-      <p>Your ID is: {this.props.users}</p>
-      {/* <LogOutButton className="log-in" /> */}
-      </div>
-      </>
-    )
+  state = {
+    playerSkill: {
+      overall: '',
+      offensive: '',
+      defensive: '',
+      aggression: '',
+      game: '',
+    }
   }
 
+  constructor() {
+    super();
+
+    this.state = {
+      showMenu: false,
+    }
+
+    this.showMenu = this.showMenu.bind(this);
+  }
+
+
+  showMenu(event) {
+    event.preventDefault();
+
+    this.setState({
+      showMenu: true,
+    });
+  }
+
+  handleChangeFor = (propertyName, event) => {
+    console.log('handleChangeFor event.target.value', event.target.value);
+    
+    this.setState({
+      playerSkill:{
+      ...this.state.playerSkill,
+      [propertyName]: event.target.value
+      }
+    })
+  }
+
+  handleSubmit = () => {
+    console.log('clicked handleSubmit', this.state.playerSkill);
+    this.props.dispatch({
+      type: 'ADD_SKILLS',
+      payload: this.state.playerSkill
+    })
+    this.props.history.push('/profile');
+  }
+
+  render() {
+    
+    return (
+      <><div>
+        <h1>PROFILE</h1>
+        <h2>Skills</h2>
+        <button 
+          style={{
+            fontSize: '2rem',
+            height: 50,
+            width: 240
+          }}
+          onClick={this.showMenu}>
+          Select Game </button>
+        {
+          this.state.showMenu
+            ? (
+              <div className="menu">
+                <button value='Rocket League' default onClick={(event) => this.handleChangeFor('game', event)}
+                  style={{
+                    height: 240,
+                    width: 160,
+                    backgroundImage: `url(https://microplay.com/media/catalog/product/cache/f3bf28a13af81a177e7f29529d01f858/6/2/6251_cover_1.jpg)`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat'
+                  }}></button>
+                <button value='NBA' onClick={(event) => this.handleChangeFor('game', event)}
+                  style={{
+                    height: 240,
+                    width: 160,
+                    backgroundImage: `url(https://images.g2a.com/newlayout/323x433/1x1x0/e1f2e4cc3323/5b4e17bbae653a58bd4ef8c7)`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat'
+                  }}></button>
+                <br />
+              </div>
+            )
+            : (
+              null
+            )
+        }
+      </div>
+      
+      <h3>Overall Skills</h3>
+      <div>
+        1<input type="radio" name="overallValue" value='1' defaultChecked
+                    onChange={(event) => this.handleChangeFor('overall', event)} />
+        2<input type="radio" name="overallValue" value='2'
+                    onChange={(event) => this.handleChangeFor('overall', event)} />
+        3<input type="radio" name="overallValue" value="3" 
+                    onChange={(event) => this.handleChangeFor('overall', event)} />
+        4<input type="radio" name="overallValue" value="4"
+                    onChange={(event) => this.handleChangeFor('overall', event)} />
+        5<input type="radio" name="overallValue" value="5" 
+                    onChange={(event) => this.handleChangeFor('overall', event)} />
+        6<input type="radio" name="overallValue" value="6"
+                    onChange={(event) => this.handleChangeFor('overall', event)} />
+        7<input type="radio" name="overallValue" value="7" 
+                    onChange={(event) => this.handleChangeFor('overall', event)} />
+        8<input type="radio" name="overallValue" value="8"
+                    onChange={(event) => this.handleChangeFor('overall', event)} />
+        9<input type="radio" name="overallValue" value="9" 
+                    onChange={(event) => this.handleChangeFor('overall', event)} />
+        10<input type="radio" name="overallValue" value="10"
+                    onChange={(event) => this.handleChangeFor('overall', event)} />
+      </div>
+      <h3>Offensive Skills {this.props.state}</h3>
+      <div>
+        1<input type="radio" name="offensiveValue" value='1' defaultChecked
+                    onChange={(event) => this.handleChangeFor('offensive', event)} />
+        2<input type="radio" name="offensiveValue" value='2'
+                    onChange={(event) => this.handleChangeFor('offensive', event)} />
+        3<input type="radio" name="offensiveValue" value="3" 
+                    onChange={(event) => this.handleChangeFor('offensive', event)} />
+        4<input type="radio" name="offensiveValue" value="4"
+                    onChange={(event) => this.handleChangeFor('offensive', event)} />
+        5<input type="radio" name="offensiveValue" value="5" 
+                    onChange={(event) => this.handleChangeFor('offensive', event)} />
+        6<input type="radio" name="offensiveValue" value="6"
+                    onChange={(event) => this.handleChangeFor('offensive', event)} />
+        7<input type="radio" name="offensiveValue" value="7" 
+                    onChange={(event) => this.handleChangeFor('offensive', event)} />
+        8<input type="radio" name="offensiveValue" value="8"
+                    onChange={(event) => this.handleChangeFor('offensive', event)} />
+        9<input type="radio" name="offensiveValue" value="9" 
+                    onChange={(event) => this.handleChangeFor('offensive', event)} />
+        10<input type="radio" name="offensiveValue" value="10"
+                    onChange={(event) => this.handleChangeFor('offensive', event)} />
+      </div>
+      <h3>Defensive Skills {this.props.state}</h3>
+      <div>
+        1<input type="radio" name="defensiveValue" value='1' defaultChecked
+                    onChange={(event) => this.handleChangeFor('defensive', event)} />
+        2<input type="radio" name="defensiveValue" value='2'
+                    onChange={(event) => this.handleChangeFor('defensive', event)} />
+        3<input type="radio" name="defensiveValue" value="3" 
+                    onChange={(event) => this.handleChangeFor('defensive', event)} />
+        4<input type="radio" name="defensiveValue" value="4"
+                    onChange={(event) => this.handleChangeFor('defensive', event)} />
+        5<input type="radio" name="defensiveValue" value="5" 
+                    onChange={(event) => this.handleChangeFor('defensive', event)} />
+        6<input type="radio" name="defensiveValue" value="6"
+                    onChange={(event) => this.handleChangeFor('defensive', event)} />
+        7<input type="radio" name="defensiveValue" value="7" 
+                    onChange={(event) => this.handleChangeFor('defensive', event)} />
+        8<input type="radio" name="defensiveValue" value="8"
+                    onChange={(event) => this.handleChangeFor('defensive', event)} />
+        9<input type="radio" name="defensiveValue" value="9" 
+                    onChange={(event) => this.handleChangeFor('defensive', event)} />
+        10<input type="radio" name="defensiveValue" value="10"
+                    onChange={(event) => this.handleChangeFor('defensive', event)} />
+      </div>
+      <h3>Aggression Skills {this.props.state}</h3>
+      <div>
+        1<input type="radio" name="aggressionValue" value='1' defaultChecked
+                    onChange={(event) => this.handleChangeFor('aggression', event)} />
+        2<input type="radio" name="aggressionValue" value='2'
+                    onChange={(event) => this.handleChangeFor('aggression', event)} />
+        3<input type="radio" name="aggressionValue" value="3" 
+                    onChange={(event) => this.handleChangeFor('aggression', event)} />
+        4<input type="radio" name="aggressionValue" value="4"
+                    onChange={(event) => this.handleChangeFor('aggression', event)} />
+        5<input type="radio" name="aggressionValue" value="5" 
+                    onChange={(event) => this.handleChangeFor('aggression', event)} />
+        6<input type="radio" name="aggressionValue" value="6"
+                    onChange={(event) => this.handleChangeFor('aggression', event)} />
+        7<input type="radio" name="aggressionValue" value="7" 
+                    onChange={(event) => this.handleChangeFor('aggression', event)} />
+        8<input type="radio" name="aggressionValue" value="8"
+                    onChange={(event) => this.handleChangeFor('aggression', event)} />
+        9<input type="radio" name="aggressionValue" value="9"
+                    onChange={(event) => this.handleChangeFor('aggression', event)} />
+        10<input type="radio" name="aggressionValue" value="10"
+                    onChange={(event) => this.handleChangeFor('aggression', event)} />
+      </div>
+
+      <button onClick={this.handleSubmit}>Submit</button>
+      </>
+    );
+  }
 }
 
-
-// Instead of taking everything from state, we just want the user info.
-// if you wanted you could write this code like this:
-// const mapStateToProps = ({user}) => ({ user });
-
-// const mapStateToProps = state => ({
-//   user: state.user,
-// });
-
-// this allows us to use <App /> in index.js
-
-// export default connect(mapStateToProps)(ProfilePage);
 
 const mapStateToProps = (reduxStore) => ({
   reduxStore
 })
 
 export default connect(mapStateToProps)(ProfilePage);
+

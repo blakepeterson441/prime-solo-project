@@ -1,4 +1,4 @@
-// This reducer will store our list of skills in the reduxStore
+// This reducer will store our list of friends in the reduxStore
 const showFriendsReducer = (state = [], action) => {
     switch (action.type) {
         case 'SET_FRIENDS':

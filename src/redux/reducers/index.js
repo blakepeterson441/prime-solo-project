@@ -5,6 +5,7 @@ import user from './userReducer';
 import setSkillsReducer from './setSkillsReducer';
 import showFriendsReducer from './showFriendsReducer';
 import showRequestsReducer from './showRequestsReducer';
+//import playersReducer from './playersReducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   setSkillsReducer,
   showFriendsReducer,
   showRequestsReducer,
+  //playersReducer,
 });
 
 export default rootReducer;

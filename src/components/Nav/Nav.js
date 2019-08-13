@@ -6,7 +6,7 @@ import './Nav.css';
 
 const Nav = (props) => (
   <div className="nav">
-    <Link to="/home">
+    <Link to="/profile">
       <h2 className="nav-title">Ticklinder</h2>
     </Link>
     <div className="nav-right">
@@ -15,12 +15,6 @@ const Nav = (props) => (
         but call this link 'Home' if they are logged in,
         and call this link 'Login / Register' if they are not */}
         {props.user.id ? 'Profile' : 'Login / Register'}
-      </Link>
-      <Link className="nav-link" to="/edit">
-        {/* Show this link if they are logged in or not,
-        but call this link 'Home' if they are logged in,
-        and call this link 'Login / Register' if they are not */}
-        {props.user.id ? 'Edit Profile' : 'Login / Register'}
       </Link>
       <Link className="nav-link" to="/friends">
         {/* Show this link if they are logged in or not,

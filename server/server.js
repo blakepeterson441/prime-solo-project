@@ -5,7 +5,6 @@ const pool = require('./modules/pool');
 const app = express();
 const bodyParser = require('body-parser');
 const sessionMiddleware = require('./modules/session-middleware');
-const { rejectUnauthenticated } = require('./modules/authentication-middleware');
 
 const passport = require('./strategies/user.strategy');
 
@@ -14,6 +13,7 @@ const userRouter = require('./routes/user.router');
 const getSkillsRouter = require('./routes/getSkills.router');
 const getFriendsRouter = require('./routes/getFriends.router');
 const getRequestsRouter = require('./routes/getRequests.router');
+const getPlayersRouter = require('./routes/getPlayers.router')
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -31,6 +31,7 @@ app.use('/api/user', userRouter);
 app.use('/api/skills', getSkillsRouter);
 app.use('/api/friends', getFriendsRouter);
 app.use('/api/friends/pending', getRequestsRouter);
+app.use('/api/players', getPlayersRouter);
 
 
 // Serve static files
