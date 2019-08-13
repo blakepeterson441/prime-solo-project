@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import ProfileUsername from '../ProfileUsername/ProfileUsername';
 
 
 class ProfilePage extends Component {
@@ -53,11 +54,22 @@ class ProfilePage extends Component {
     this.props.history.push('/profile');
   }
 
+  componentDidMount = () => {
+    console.log('componentDidMount', this.props.reduxStore.user);
+    this.props.dispatch({
+      type: 'GET_USERNAME',
+      payload: this.props.reduxStore.user.username
+    })
+  }
+
   render() {
     
     return (
       <><div>
-        <h1>PROFILE</h1>
+        <h1>
+          {this.props.reduxStore.showFriendsReducer.map( (friend, index) => 
+                    <ProfileUsername friend={friend} key={index}/>
+                )} </h1>
         <h2>Skills</h2>
         <button 
           style={{

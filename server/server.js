@@ -31,7 +31,7 @@ app.use('/api/user', userRouter);
 app.use('/api/skills', getSkillsRouter);
 app.use('/api/friends', getFriendsRouter);
 app.use('/api/friends/pending', getRequestsRouter);
-app.use('/api/players', getPlayersRouter);
+//app.use('/api/players', getPlayersRouter);
 
 
 // Serve static files
