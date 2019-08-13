@@ -5,7 +5,7 @@ function* fetchSkills(action){
   console.log('fetchSkills action.playload', action.payload);
   
   try {
-    const response = yield axios.get(`/skills?overall=${action.payload.overall}&offensive=${action.payload.offensive}&defensive=${action.payload.defensive}&aggression=${action.payload.aggression}&game=${action.payload.game}`, action.payload);
+    const response = yield axios.get(`/api/skills?overall=${action.payload.overall}&offensive=${action.payload.offensive}&defensive=${action.payload.defensive}&aggression=${action.payload.aggression}&game=${action.payload.game}`, action.payload);
     console.log('in fetchSkills: response.data is:', response.data);
     
     yield put({

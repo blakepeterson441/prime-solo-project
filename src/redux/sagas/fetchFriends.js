@@ -5,7 +5,7 @@ function* fetchFriends(action){
   console.log('fetchFriends action.playload', action.payload);
   
   try {
-    const response = yield axios.get(`/friends`);
+    const response = yield axios.get(`/api/friends`);
     console.log('in fetchFriends: response.data is:', response.data);
     
     yield put({

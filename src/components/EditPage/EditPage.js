@@ -57,7 +57,7 @@ class EditPage extends Component {
     
     return (
       <><div>
-        <h1>Search for Players</h1>
+        <h1>Edit Skills</h1>
         <button 
           style={{
             fontSize: '2rem',
