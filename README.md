@@ -122,4 +122,3 @@ Customize this ReadMe and the code comments in this project to read less like a 
     - react-redux
     - redux-logger
     - react-router-dom
-    - query-string

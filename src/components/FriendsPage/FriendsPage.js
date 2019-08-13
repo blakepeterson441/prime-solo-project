@@ -21,13 +21,13 @@ class FriendsPage extends Component {
   render(){
     return(
       <>
-        <ul>
-          {this.props.reduxStore.showFriendsReducer.map( (friend, index) => 
-                    <FriendsList friend={friend} key={index}/>
-                )}  
+        <ul> 
           {this.props.reduxStore.showRequestsReducer.map( (friend, index) => 
                     <RequestsList friend={friend} key={index}/>
                 )}  
+          {this.props.reduxStore.showFriendsReducer.map( (friend, index) => 
+                    <FriendsList friend={friend} key={index}/>
+                )} 
         </ul>
       </>
     );

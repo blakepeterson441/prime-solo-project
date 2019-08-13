@@ -70,7 +70,7 @@ app.get('/friends', rejectUnauthenticated, (req, res) => {
 });
 
 app.get('/friends/pending', rejectUnauthenticated, (req, res) => {
-  console.log('/friends', req.user);
+  console.log('/friends/pending', req.user);
   const sqlText = `(select username, friends.user_id_two as friend_ID from "users" 
                         join friends on friends.user_id_two = "users".id where 
                         friends.user_id_one = $1 and approved = 'false')
