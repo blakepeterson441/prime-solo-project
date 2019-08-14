@@ -1,17 +1,18 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import ProfileUsername from '../ProfileUsername/ProfileUsername';
+//import ProfileUsername from '../ProfileUsername/ProfileUsername';
 
 
 class ProfilePage extends Component {
 
   state = {
-    playerSkill: {
+    addSkill: {
+      userId: '',
+      gameId: '',
       overall: '',
       offensive: '',
       defensive: '',
       aggression: '',
-      game: '',
     }
   }
 
@@ -51,7 +52,6 @@ class ProfilePage extends Component {
       type: 'ADD_SKILLS',
       payload: this.state.playerSkill
     })
-    this.props.history.push('/profile');
   }
 
   componentDidMount = () => {
@@ -66,10 +66,7 @@ class ProfilePage extends Component {
     
     return (
       <><div>
-        <h1>
-          {this.props.reduxStore.showFriendsReducer.map( (friend, index) => 
-                    <ProfileUsername friend={friend} key={index}/>
-                )} </h1>
+                <h1>{this.props.reduxStore.user.username}'s Profile</h1>
         <h2>Skills</h2>
         <button 
           style={{
@@ -83,7 +80,7 @@ class ProfilePage extends Component {
           this.state.showMenu
             ? (
               <div className="menu">
-                <button value='Rocket League' default onClick={(event) => this.handleChangeFor('game', event)}
+                <button value='1' default onClick={(event) => this.handleChangeFor('game', event)}
                   style={{
                     height: 240,
                     width: 160,
@@ -92,7 +89,7 @@ class ProfilePage extends Component {
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat'
                   }}></button>
-                <button value='NBA' onClick={(event) => this.handleChangeFor('game', event)}
+                <button value='2' onClick={(event) => this.handleChangeFor('game', event)}
                   style={{
                     height: 240,
                     width: 160,

@@ -9,7 +9,7 @@ function* fetchSkills(action){
     console.log('in fetchSkills: response.data is:', response.data);
     
     yield put({
-      type: 'SET_SKILLS',
+      type: 'FETCH_SKILLS',
       payload: response.data
     });
   } 

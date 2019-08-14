@@ -2,9 +2,6 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-/**
- * GET route template
- */
 router.get('/', (req, res) => {
   console.log('get server', req.query.game);
   const sqlText = `SELECT users.username, games.name, user_games.overall_skill, user_games.offensive_skill, user_games.defensive_skill, user_games.aggression

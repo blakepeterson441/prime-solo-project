@@ -16,7 +16,6 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import AdminPage from '../AdminPage/AdminPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import SearchPage from '../SearchPage/SearchPage';
-import EditPage from '../EditPage/EditPage';
 import FriendsPage from '../FriendsPage/FriendsPage';
 import PlayersToAdd from '../PlayersToAdd/PlayersToAdd';
 
@@ -50,12 +49,6 @@ class App extends Component {
               exact
               path="/profile"
               component={ProfilePage}
-            />
-
-            <ProtectedRoute
-              exact
-              path="/edit"
-              component={EditPage}
             />
 
             <ProtectedRoute

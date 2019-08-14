@@ -9,7 +9,7 @@ class PlayersToAdd extends Component {
     return (
         <>
             <ul> 
-                {this.props.reduxStore.setSkillsReducer.map( (player, index) => 
+                {this.props.reduxStore.fetchSkillsReducer.map( (player, index) => 
                     <PlayerList player={player} key={index}/>
                 )}  
             </ul>
