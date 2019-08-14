@@ -3,19 +3,14 @@ import {connect} from 'react-redux';
 
 class FriendsList extends Component {
 
-    deleteHandler = () => {
-        console.log('REMOVE_FRIEND');
-    }
-
     render() {
         return (
             <>
                 <li>
-                    <h2>Friends</h2>
                     <div>
-                        <p>Username: <b>{this.props.friend.username}</b></p>
+                        <p>Username: <b>{this.props.player.username}</b></p>
                     </div>
-                   <button onClick={this.deleteHandler}>Delete</button>
+                   <button onClick={() => this.props.deletePlayer(this.props.player)}>Delete</button>
                 </li>
             </>
         )

@@ -18,19 +18,43 @@ class FriendsPage extends Component {
 
   }
 
-  deleteHandler = () => {
+  deletePlayer = (player) => {
     console.log('REMOVE_FRIEND');
+    let data = {
+      user1: this.props.reduxStore.user.id,
+      user2: player.id
+    }
+    this.props.dispatch({
+      type: 'REMOVE_FRIEND',
+      payload: data
+    })
+  }
+
+  addPlayer = (player) => {
+    console.log('ADD_FRIEND');
+    let data = {
+      user1: this.props.reduxStore.user.id,
+      user2: player.id
+    }
+    this.props.dispatch({
+      type: 'ADD_FRIEND',
+      payload: data
+    })
   }
 
   render(){
     return(
       <>
         <ul> 
-          {this.props.reduxStore.showRequestsReducer.map( (friend, index) => 
-                    <RequestsList friend={friend} key={index}/>
+          <h2>Friend Requests</h2>
+          {this.props.reduxStore.showRequestsReducer.map( (player, index) => 
+                    <RequestsList player={player} key={index} 
+                    deletePlayer={this.deletePlayer} addPlayer={this.addPlayer}/>
                 )}  
-          {this.props.reduxStore.showFriendsReducer.map( (friend, index) => 
-                    <FriendsList friend={friend} key={index}/>
+          
+          <h2>Friends</h2>
+          {this.props.reduxStore.showFriendsReducer.map( (player, index) => 
+                    <FriendsList player={player} key={index} deletePlayer={this.deletePlayer}/>
                 )} 
         </ul>
       </>

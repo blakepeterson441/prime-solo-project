@@ -3,24 +3,15 @@ import {connect} from 'react-redux';
 
 class RequestsList extends Component {
 
-    addHandler = () => {
-        console.log('clicked accept');
-    }
-
-    deleteHandler = () => {
-        console.log('clicked decline');
-    }
-
     render() {
         return (
             <>
-                <h2>Friend Requests</h2>
                 <li>
                     <div>
-                        <p>Username: <b>{this.props.friend.username}</b></p>
+                        <p>Username: <b>{this.props.player.username}</b></p>
                     </div>
-                   <button onClick={this.addHandler}>Accept</button>
-                   <button onClick={this.deleteHandler}>Decline</button>
+                   <button onClick={() => this.props.addPlayer(this.props.player)}>Accept</button>
+                   <button onClick={() => this.props.deletePlayer(this.props.player)}>Decline</button>
                 </li>
             </>
         )
