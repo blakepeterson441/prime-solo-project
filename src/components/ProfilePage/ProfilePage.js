@@ -7,8 +7,8 @@ class ProfilePage extends Component {
 
   state = {
     addSkill: {
-      userId: '',
-      gameId: '',
+      user: '',
+      game: '',
       overall: '',
       offensive: '',
       defensive: '',
@@ -39,18 +39,18 @@ class ProfilePage extends Component {
     console.log('handleChangeFor event.target.value', event.target.value);
     
     this.setState({
-      playerSkill:{
-      ...this.state.playerSkill,
+      addSkill:{
+      ...this.state.addSkill,
       [propertyName]: event.target.value
       }
     })
   }
 
   handleSubmit = () => {
-    console.log('clicked handleSubmit', this.state.playerSkill);
+    console.log('clicked handleSubmit', this.state.addSkill);
     this.props.dispatch({
       type: 'ADD_SKILLS',
-      payload: this.state.playerSkill
+      payload: this.state.addSkill
     })
   }
 
