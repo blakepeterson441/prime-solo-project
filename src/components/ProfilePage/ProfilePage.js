@@ -7,7 +7,6 @@ class ProfilePage extends Component {
 
   state = {
     addSkill: {
-      user: '',
       game: '',
       overall: '',
       offensive: '',
@@ -48,9 +47,13 @@ class ProfilePage extends Component {
 
   handleSubmit = () => {
     console.log('clicked handleSubmit', this.state.addSkill);
+    let data = {
+      addSkill: this.state.addSkill,
+      user: this.props.reduxStore.user.id
+    }
     this.props.dispatch({
       type: 'ADD_SKILLS',
-      payload: this.state.addSkill
+      payload: data
     })
   }
 
