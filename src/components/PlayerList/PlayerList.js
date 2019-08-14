@@ -3,19 +3,6 @@ import { connect } from 'react-redux';
 
 class PlayerList extends Component {
 
-    // state = {
-    //     to_id: '',
-    //     from_id: '',
-    // }
-
-    addPlayer = () => {
-        console.log('addPlayer');
-        // this.props.dispatch({
-        //     type: 'ADD_FRIEND',
-        //     payload: this.state
-        // })
-    }
-
     render() {
         return (
             <>
@@ -28,7 +15,7 @@ class PlayerList extends Component {
                         <p>Defensive Skill: <b>{this.props.player.defensive_skill}</b></p>
                         <p>Aggression: <b>{this.props.player.aggression}</b></p>
                     </div>
-                   <button onClick={this.addPlayer}>Add</button>
+                   <button onClick={() => this.props.addPlayer(this.props.player)}>Add</button>
                 </li>
             </>
         )

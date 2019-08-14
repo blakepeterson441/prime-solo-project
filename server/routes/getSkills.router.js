@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   console.log('get server', req.query.game);
-  const sqlText = `SELECT users.username, games.name, user_games.overall_skill, user_games.offensive_skill, user_games.defensive_skill, user_games.aggression
+  const sqlText = `SELECT users.id, users.username, games.name, user_games.overall_skill, user_games.offensive_skill, user_games.defensive_skill, user_games.aggression
                     FROM games
                     JOIN user_games ON user_games.game_id = games.id
                     JOIN users ON users.id = user_games.user_id

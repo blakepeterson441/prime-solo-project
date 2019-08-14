@@ -14,6 +14,7 @@ const getSkillsRouter = require('./routes/getSkills.router');
 const getFriendsRouter = require('./routes/getFriends.router');
 const getRequestsRouter = require('./routes/getRequests.router');
 const setSkillsRouter = require('./routes/setSkills.router');
+const setFriendsRouter = require('./routes/setFriends.router');
 //const getPlayersRouter = require('./routes/getPlayers.router')
 
 // Body parser middleware
@@ -33,6 +34,7 @@ app.use('/api/skills', getSkillsRouter);
 app.use('/api/friends', getFriendsRouter);
 app.use('/api/friends/pending', getRequestsRouter);
 app.use('/api/skills/set', setSkillsRouter);
+app.use('/api/friends/add', setFriendsRouter);
 //app.use('/api/players', getPlayersRouter);
 
 

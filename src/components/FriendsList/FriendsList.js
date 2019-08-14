@@ -3,8 +3,8 @@ import {connect} from 'react-redux';
 
 class FriendsList extends Component {
 
-    deletePlayer = () => {
-        console.log('deletePlayer');
+    deleteHandler = () => {
+        console.log('REMOVE_FRIEND');
     }
 
     render() {
@@ -15,7 +15,7 @@ class FriendsList extends Component {
                     <div>
                         <p>Username: <b>{this.props.friend.username}</b></p>
                     </div>
-                   <button onClick={this.deletePlayer}>Delete</button>
+                   <button onClick={this.deleteHandler}>Delete</button>
                 </li>
             </>
         )

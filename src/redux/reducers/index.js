@@ -6,6 +6,8 @@ import fetchSkillsReducer from './fetchSkillsReducer';
 import showFriendsReducer from './showFriendsReducer';
 import showRequestsReducer from './showRequestsReducer';
 import setSkillsReducer from './setSkillsReducer';
+import addFriendsReducer from './addFriendsReducer';
+import deleteFriendsReducer from './deleteFriendsReducer';
 //import playersReducer from './playersReducer';
 
 // rootReducer is the primary reducer for our entire project
@@ -22,6 +24,8 @@ const rootReducer = combineReducers({
   showFriendsReducer,
   showRequestsReducer,
   setSkillsReducer,
+  addFriendsReducer,
+  deleteFriendsReducer,
   //playersReducer,
 });
 

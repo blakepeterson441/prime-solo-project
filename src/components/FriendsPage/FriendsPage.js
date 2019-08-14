@@ -18,6 +18,10 @@ class FriendsPage extends Component {
 
   }
 
+  deleteHandler = () => {
+    console.log('REMOVE_FRIEND');
+  }
+
   render(){
     return(
       <>

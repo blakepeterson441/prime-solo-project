@@ -3,11 +3,11 @@ import {connect} from 'react-redux';
 
 class RequestsList extends Component {
 
-    acceptPlayer = () => {
+    addHandler = () => {
         console.log('clicked accept');
     }
 
-    declinePlayer = () => {
+    deleteHandler = () => {
         console.log('clicked decline');
     }
 
@@ -19,8 +19,8 @@ class RequestsList extends Component {
                     <div>
                         <p>Username: <b>{this.props.friend.username}</b></p>
                     </div>
-                   <button onClick={this.acceptPlayer}>Accept</button>
-                   <button onClick={this.declinePlayer}>Decline</button>
+                   <button onClick={this.addHandler}>Accept</button>
+                   <button onClick={this.deleteHandler}>Decline</button>
                 </li>
             </>
         )
