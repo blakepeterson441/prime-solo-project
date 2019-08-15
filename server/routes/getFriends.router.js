@@ -8,13 +8,13 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
  */
 router.get('/', rejectUnauthenticated, (req, res) => {
   console.log('GET friends server', req.user);
-  const sqlText = `(select username, friends.user_id_two as friend_ID from "users" 
+  const sqlText = `(select username, friends.approved, friends.user_id_two as friend_ID from "users" 
                         join friends on friends.user_id_two = "users".id where 
-                        friends.user_id_one = $1 and approved = 'true')
+                        friends.user_id_one = $1)
                         union
-                        (select username, friends.user_id_one as friend_ID from 
+                        (select username, friends.approved, friends.user_id_one as friend_ID from 
                         "users" join friends on friends.user_id_one = "users".id 
-                        where friends.user_id_two = $1 and approved = 'true');`
+                        where friends.user_id_two = $1);`
   const sqlValues = [req.user.id]
   pool.query(sqlText, sqlValues)
   .then(response => {

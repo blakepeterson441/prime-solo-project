@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import FriendsList from '../FriendsList/FriendsList';
 import RequestsList from '../RequestsList/RequestsList';
 
@@ -32,27 +32,45 @@ class FriendsPage extends Component {
 
   declinePlayer = (player) => {
     console.log('REMOVE_FRIEND');
-    
+
   }
 
   acceptRequest = (player) => {
     console.log('ACCEPT_REQUEST');
   }
 
-  render(){
-    return(
+  checkRequests = (player, index) => {
+    if (player.approved === false) {
+      return (
+        <RequestsList player={player} key={index}
+          deletePlayer={this.deletePlayer} acceptRequest={this.acceptRequest} />
+      );
+    } else {
+      return (<></>);
+    }
+  }
+
+  checkApproved = (player, index) => {
+    if (player.approved === true) {
+      return (
+        <FriendsList player={player} key={index} deletePlayer={this.deletePlayer} />
+      );
+    } else {
+      return (<></>);
+    }
+  }
+
+  render() {
+    return (
       <>
-        <ul> 
+        <ul>
           <h2>Friend Requests</h2>
-          {this.props.reduxStore.showRequestsReducer.map( (player, index) => 
-                    <RequestsList player={player} key={index} 
-                    deletePlayer={this.deletePlayer} acceptRequest={this.acceptRequest}/>
-                )}  
-          
+          {this.props.reduxStore.friendsReducer.map((player, index) => this.checkRequests(player, index) 
+          )}
+
           <h2>Friends</h2>
-          {this.props.reduxStore.showFriendsReducer.map( (player, index) => 
-                    <FriendsList player={player} key={index} deletePlayer={this.deletePlayer}/>
-                )} 
+          {this.props.reduxStore.friendsReducer.map((player, index) => this.checkApproved(player, index) 
+          )}
         </ul>
       </>
     );

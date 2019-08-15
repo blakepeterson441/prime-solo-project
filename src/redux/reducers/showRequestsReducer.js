@@ -1,10 +1,10 @@
-const showRequestsReducer = (state = [], action) => {
-    switch (action.type) {
-        case 'SET_REQUESTS':
-            return action.payload;
-        default:
-            return state;
-    }
-}
+// const showRequestsReducer = (state = [], action) => {
+//     switch (action.type) {
+//         case 'SET_REQUESTS':
+//             return action.payload;
+//         default:
+//             return state;
+//     }
+// }
 
-export default showRequestsReducer;
+// export default showRequestsReducer;
