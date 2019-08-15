@@ -9,7 +9,7 @@ function* addFriends(action){
     console.log('in fetchFriends: response.data is:', response.data);
     
     yield put({
-      type: 'SET_FRIEND',
+      type: 'SEARCH_FRIENDS',
       payload: response.data
     });
   } 

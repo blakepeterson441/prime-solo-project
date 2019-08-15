@@ -4,10 +4,10 @@ const router = express.Router();
 
 
 
-router.delete('/', (req, res) => {
-    console.log('DELETE friends server', req.body);
-    const sqlText = `DELETE FROM "friends" WHERE user_id_one = $1 AND user_id_two = $2;`;
-    const sqlValues = [req.body.user1, req.body.user2]
+router.delete('/:user1id/:user2id', (req, res) => {
+    console.log('DELETE friends server', req.params);
+    const sqlText = `DELETE FROM "friends" WHERE (user_id_one = $1 AND user_id_two = $2) OR (user_id_one = $2 AND user_id_two = $1);`;
+    const sqlValues = [req.params.user1id, req.params.user2id]
     pool.query(sqlText, sqlValues)
         .then(response => {
             res.send(response.rows);

@@ -5,6 +5,10 @@ import PlayerList from '../PlayerList/PlayerList';
 
 class PlayersToAdd extends Component {
 
+    state = {
+        approved: false,
+    }
+
     addPlayer = (player) => {
         console.log('addPlayer', player);
         let data = {

@@ -22,7 +22,7 @@ class FriendsPage extends Component {
     console.log('REMOVE_FRIEND');
     let data = {
       user1: this.props.reduxStore.user.id,
-      user2: player.id
+      user2: player.friend_id
     }
     this.props.dispatch({
       type: 'REMOVE_FRIEND',
@@ -30,16 +30,13 @@ class FriendsPage extends Component {
     })
   }
 
-  addPlayer = (player) => {
-    console.log('ADD_FRIEND');
-    let data = {
-      user1: this.props.reduxStore.user.id,
-      user2: player.id
-    }
-    this.props.dispatch({
-      type: 'ADD_FRIEND',
-      payload: data
-    })
+  declinePlayer = (player) => {
+    console.log('REMOVE_FRIEND');
+    
+  }
+
+  acceptRequest = (player) => {
+    console.log('ACCEPT_REQUEST');
   }
 
   render(){
@@ -49,7 +46,7 @@ class FriendsPage extends Component {
           <h2>Friend Requests</h2>
           {this.props.reduxStore.showRequestsReducer.map( (player, index) => 
                     <RequestsList player={player} key={index} 
-                    deletePlayer={this.deletePlayer} addPlayer={this.addPlayer}/>
+                    deletePlayer={this.deletePlayer} acceptRequest={this.acceptRequest}/>
                 )}  
           
           <h2>Friends</h2>

@@ -1,4 +1,4 @@
-const showFriendsReducer = (state = [], action) => {
+const friendsReducer = (state = [], action) => {
     switch (action.type) {
         case 'SET_FRIENDS':
             return action.payload;
@@ -7,4 +7,4 @@ const showFriendsReducer = (state = [], action) => {
     }
 }
 
-export default showFriendsReducer;
+export default friendsReducer;
