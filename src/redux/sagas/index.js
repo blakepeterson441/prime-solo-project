@@ -2,12 +2,12 @@ import { all, takeEvery } from 'redux-saga/effects';
 import loginSaga from './loginSaga';
 import registrationSaga from './registrationSaga';
 import userSaga from './userSaga';
-import fetchSkills from "./fetchSkills";
-import fetchFriends from './fetchFriends';
-import fetchRequests from './fetchRequests';
-import setSkills from './setSkills';
-import addFriends from './addFriends';
-import deleteFriends from './deleteFriends';
+import fetchSkills from "./fetchSkillsSaga";
+import fetchFriends from './fetchFriendsSaga';
+import fetchRequests from './fetchRequestsSaga';
+import setSkills from './setSkillsSaga';
+import addFriends from './addFriendsSaga';
+import deleteFriends from './deleteFriendsSaga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.

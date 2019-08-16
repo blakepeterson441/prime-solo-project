@@ -5,10 +5,6 @@ import PlayerList from '../PlayerList/PlayerList';
 
 class PlayersToAdd extends Component {
 
-    state = {
-        approved: false,
-    }
-
     addPlayer = (player) => {
         console.log('addPlayer', player);
         let data = {
@@ -21,12 +17,21 @@ class PlayersToAdd extends Component {
         })
     }
 
+    checkPlayer = (player, index) => {
+        if (this.props.reduxStore.user.id === player.id){
+            return (<></>);
+        } else {
+            return (
+                <PlayerList player={player} key={index} addPlayer={this.addPlayer} />
+            );
+        }
+    }
+
     render() {
         return (
             <>
                 <ul> 
-                    {this.props.reduxStore.fetchSkillsReducer.map( (player, index) => 
-                        <PlayerList player={player} key={index} addPlayer={this.addPlayer}/>
+                    {this.props.reduxStore.fetchSkillsReducer.map( (player, index) => this.checkPlayer(player, index)
                     )}  
                 </ul>
             </>

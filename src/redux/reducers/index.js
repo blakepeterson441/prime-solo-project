@@ -3,8 +3,8 @@ import errors from './errorsReducer';
 import loginMode from './loginModeReducer';
 import user from './userReducer';
 import fetchSkillsReducer from './fetchSkillsReducer';
-import showFriendsReducer from './showFriendsReducer';
-import showRequestsReducer from './showRequestsReducer';
+// import showFriendsReducer from './showFriendsReducer';
+// import showRequestsReducer from './showRequestsReducer';
 import setSkillsReducer from './setSkillsReducer';
 import addFriendsReducer from './addFriendsReducer';
 import deleteFriendsReducer from './deleteFriendsReducer';
@@ -21,8 +21,8 @@ const rootReducer = combineReducers({
   loginMode, // will have a value of 'login' or 'registration' to control which screen is shown
   user, // will have an id and username if someone is logged in
   fetchSkillsReducer,
-  showFriendsReducer,
-  showRequestsReducer,
+  // showFriendsReducer,
+  // showRequestsReducer,
   setSkillsReducer,
   addFriendsReducer,
   deleteFriendsReducer,

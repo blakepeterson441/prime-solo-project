@@ -16,6 +16,7 @@ const getRequestsRouter = require('./routes/getRequests.router');
 const setSkillsRouter = require('./routes/setSkills.router');
 const setFriendsRouter = require('./routes/setFriends.router');
 const deleteFriendsRouter = require('./routes/deleteFriends.router');
+const editSkillsRouter = require('./routes/editSkills.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -36,6 +37,7 @@ app.use('/api/friends/pending', getRequestsRouter);
 app.use('/api/skills/set', setSkillsRouter);
 app.use('/api/friends/add', setFriendsRouter);
 app.use('/api/friends/delete', deleteFriendsRouter);
+app.use('/api/skills/edit', editSkillsRouter);
 
 
 // Serve static files
