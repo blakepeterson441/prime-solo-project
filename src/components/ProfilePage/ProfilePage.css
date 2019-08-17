@@ -1,11 +1,9 @@
 body {
     background-color: #ACB0BD;
-    padding: 20px
 }
 
 h1 {
-    width: 400px;
-    align-content: center;
+    text-align: center;
     background-color: #D0CDD7;
     color: #0B3948;
 }
@@ -26,5 +24,4 @@ li {
 
 .skills {
     color: #0B3948;
-    padding-left: 20px
 }

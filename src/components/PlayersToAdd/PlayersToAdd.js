@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PlayerList from '../PlayerList/PlayerList';
+import './PlayersToAdd.css';
 
 
 class PlayersToAdd extends Component {
+
 
     addPlayer = (player) => {
         console.log('addPlayer', player);

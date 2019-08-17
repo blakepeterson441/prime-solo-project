@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import './ProfilePage.css';
 //import ProfileUsername from '../ProfileUsername/ProfileUsername';
 
 
@@ -70,8 +71,8 @@ class ProfilePage extends Component {
     return (
       <><div>
                 <h1>{this.props.reduxStore.user.username}'s Profile</h1>
-        <h2>Skills</h2>
-        <button 
+        <h2 className="skills">Skills</h2>
+        <button className="select" 
           style={{
             fontSize: '2rem',
             height: 50,
@@ -110,8 +111,8 @@ class ProfilePage extends Component {
         }
       </div>
       
-      <h3>Overall Skills</h3>
-      <div>
+      <h3 className="skills">Overall Skills</h3>
+      <div className="skills">
         1<input type="radio" name="overallValue" value='1' defaultChecked
                     onChange={(event) => this.handleChangeFor('overall', event)} />
         2<input type="radio" name="overallValue" value='2'
@@ -133,8 +134,8 @@ class ProfilePage extends Component {
         10<input type="radio" name="overallValue" value="10"
                     onChange={(event) => this.handleChangeFor('overall', event)} />
       </div>
-      <h3>Offensive Skills {this.props.state}</h3>
-      <div>
+      <h3 className="skills">Offensive Skills {this.props.state}</h3>
+      <div className="skills">
         1<input type="radio" name="offensiveValue" value='1' defaultChecked
                     onChange={(event) => this.handleChangeFor('offensive', event)} />
         2<input type="radio" name="offensiveValue" value='2'
@@ -156,8 +157,8 @@ class ProfilePage extends Component {
         10<input type="radio" name="offensiveValue" value="10"
                     onChange={(event) => this.handleChangeFor('offensive', event)} />
       </div>
-      <h3>Defensive Skills {this.props.state}</h3>
-      <div>
+      <h3 className="skills">Defensive Skills {this.props.state}</h3>
+      <div className="skills">
         1<input type="radio" name="defensiveValue" value='1' defaultChecked
                     onChange={(event) => this.handleChangeFor('defensive', event)} />
         2<input type="radio" name="defensiveValue" value='2'
@@ -179,8 +180,8 @@ class ProfilePage extends Component {
         10<input type="radio" name="defensiveValue" value="10"
                     onChange={(event) => this.handleChangeFor('defensive', event)} />
       </div>
-      <h3>Aggression Skills {this.props.state}</h3>
-      <div>
+      <h3 className="skills">Aggression Skills {this.props.state}</h3>
+      <div className="skills">
         1<input type="radio" name="aggressionValue" value='1' defaultChecked
                     onChange={(event) => this.handleChangeFor('aggression', event)} />
         2<input type="radio" name="aggressionValue" value='2'
@@ -203,7 +204,7 @@ class ProfilePage extends Component {
                     onChange={(event) => this.handleChangeFor('aggression', event)} />
       </div>
 
-      <button onClick={this.handleSubmit}>Submit</button>
+      <button className="select" onClick={this.handleSubmit}>Submit</button>
       </>
     );
   }

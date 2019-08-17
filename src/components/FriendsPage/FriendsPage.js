@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import FriendsList from '../FriendsList/FriendsList';
 import RequestsList from '../RequestsList/RequestsList';
+import './FriendsPage.css';
 
 class FriendsPage extends Component {
 
