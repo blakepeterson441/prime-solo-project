@@ -14,7 +14,7 @@ class FriendsList extends Component {
                     <div>
                         <p>Username: <b>{this.props.player.username}</b></p>
                     </div>
-                    <Tooltip title="Delete"><button onClick={() => this.props.deletePlayer(this.props.player)}><DeleteForeverIcon /></button></Tooltip>
+                    <Tooltip title="Delete Friend"><button onClick={() => this.props.deletePlayer(this.props.player)}><DeleteForeverIcon /></button></Tooltip>
                 </li>
             </>
         )

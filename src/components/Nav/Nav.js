@@ -10,6 +10,7 @@ import UserIcon from '@material-ui/icons/Person';
 import SearchIcon from '@material-ui/icons/Search';
 import PeopleIcon from '@material-ui/icons/People';
 import Tooltip from '@material-ui/core/Tooltip';
+import SupervisedUserCircle from '@material-ui/icons/SupervisedUserCircle';
 
 const styles = theme => ({
   icons: {
@@ -51,15 +52,14 @@ class Nav extends Component {
                   <SearchIcon />
                 </Link>
               </Tooltip>
+              <Tooltip title="Admin">
+                <Link className="nav-link" to="/admin">
+                  <SupervisedUserCircle />
+                </Link>
+              </Tooltip>
               <LogOutButton className="nav-link"/>
             </>
           )}
-          <Link className="nav-link" to="/admin">
-            {/* Show this link if they are logged in or not,
-            but call this link 'Home' if they are logged in,
-            and call this link 'Login / Register' if they are not */}
-            {this.props.user.id ? 'Admin' : 'Login / Register'}
-          </Link>
         </div>
       </div>
     )

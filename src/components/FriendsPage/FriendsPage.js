@@ -31,13 +31,8 @@ class FriendsPage extends Component {
     })
   }
 
-  declinePlayer = (player) => {
-    console.log('REMOVE_FRIEND');
-
-  }
-
   acceptRequest = (player) => {
-    console.log('ACCEPT_REQUEST');
+    console.log('ACCEPT REQUEST');
   }
 
   checkRequests = (player, index) => {
