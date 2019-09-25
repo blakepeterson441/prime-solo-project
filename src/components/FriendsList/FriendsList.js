@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
+//Material UI
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import Tooltip from '@material-ui/core/Tooltip';
+
 class FriendsList extends Component {
 
     render() {
@@ -10,7 +14,7 @@ class FriendsList extends Component {
                     <div>
                         <p>Username: <b>{this.props.player.username}</b></p>
                     </div>
-                   <button onClick={() => this.props.deletePlayer(this.props.player)}>Delete</button>
+                    <Tooltip title="Delete"><button onClick={() => this.props.deletePlayer(this.props.player)}><DeleteForeverIcon /></button></Tooltip>
                 </li>
             </>
         )

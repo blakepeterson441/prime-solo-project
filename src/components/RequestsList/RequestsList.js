@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 //Material UI
 import PersonAdd from '@material-ui/icons/PersonAdd';
 import PersonAddDisabled from '@material-ui/icons/PersonAddDisabled';
+import Tooltip from '@material-ui/core/Tooltip';
 
 class RequestsList extends Component {
 
@@ -14,8 +15,8 @@ class RequestsList extends Component {
                     <div>
                         <p>Username: <b>{this.props.player.username}</b></p>
                     </div>
-                   <button onClick={() => this.props.addPlayer(this.props.player)}><PersonAdd /></button>
-                   <button onClick={() => this.props.deletePlayer(this.props.player)}><PersonAddDisabled /></button>
+                    <Tooltip title="Add"><button onClick={() => this.props.addPlayer(this.props.player)}><PersonAdd /></button></Tooltip>
+                    <Tooltip title="Decline"><button onClick={() => this.props.deletePlayer(this.props.player)}><PersonAddDisabled /></button></Tooltip>
                 </li>
             </>
         )
