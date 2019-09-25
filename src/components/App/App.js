@@ -13,6 +13,7 @@ import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 
+import LandingPage from '../LandingPage/LandingPage';
 import AdminPage from '../AdminPage/AdminPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import SearchPage from '../SearchPage/SearchPage';
@@ -33,7 +34,7 @@ class App extends Component {
           <Nav />
           <Switch>
             {/* Visiting localhost:3000 will redirect to localhost:3000/profile */}
-            <Redirect exact from="/" to="/profile" />
+            <Redirect exact from="/" to="/landingpage" />
             {/* Visiting localhost:3000/admin will show the admin page.
             This is a route anyone can see, no login necessary */}
             <ProtectedRoute
@@ -49,6 +50,12 @@ class App extends Component {
               exact
               path="/profile"
               component={ProfilePage}
+            />
+
+            <ProtectedRoute 
+              exact 
+              path="/landingpage"
+              component={LandingPage}
             />
 
             <ProtectedRoute
