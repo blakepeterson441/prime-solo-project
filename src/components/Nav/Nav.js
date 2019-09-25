@@ -32,19 +32,20 @@ class Nav extends Component {
           <h2 className="nav-title">Player 2</h2>
         </Link>
         <div className="nav-right">
-          <Tooltip title="Profile">
-            <Link className="nav-link" to="/profile">
-              <UserIcon />
-            </Link>
-          </Tooltip>
-          <Tooltip title="Friends">
-            <Link className="nav-link" to="/friends">
-              <PeopleIcon />
-            </Link>
-          </Tooltip>
+          
           {/* Show the link to the search page and the logout button if the user is logged in */}
           {this.props.user.id && (
             <>
+              <Tooltip title="Profile">
+                <Link className="nav-link" to="/profile">
+                  <UserIcon />
+                </Link>
+              </Tooltip>
+              <Tooltip title="Friends">
+                <Link className="nav-link" to="/friends">
+                  <PeopleIcon />
+                </Link>
+              </Tooltip>
               <Tooltip title="Search Players">
                 <Link className="nav-link" to="/search">
                   <SearchIcon />
