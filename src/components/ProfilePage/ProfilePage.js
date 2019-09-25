@@ -69,8 +69,9 @@ class ProfilePage extends Component {
   render() {
     
     return (
-      <><div>
-                <h1>{this.props.reduxStore.user.username}'s Profile</h1>
+      <>
+      <div>
+        <h1>{this.props.reduxStore.user.username}'s Profile</h1>
         <h2 className="skills">Skills</h2>
         <button className="select" 
           style={{
