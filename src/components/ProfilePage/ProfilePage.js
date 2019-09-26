@@ -7,6 +7,12 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import NativeSelect from '@material-ui/core/NativeSelect';
+import InputBase from '@material-ui/core/InputBase';
 
 
 const styles = theme => ({
@@ -21,7 +27,7 @@ const styles = theme => ({
     margin: 'auto',
     width: '30%'
   },
-  input: {
+  input34: {
     margin: 'auto',
     width: '37%',
     color: '#0B3948',
@@ -34,6 +40,40 @@ const styles = theme => ({
   },
   numBtn: {
     color: '#0B3948',
+  },
+  root: {
+    'label + &': {
+      marginTop: theme.spacing(3),
+    },
+    width: '15%',
+    height: '10%'
+  }, 
+  input: {
+    borderRadius: 4,
+    position: 'relative',
+    backgroundColor: theme.palette.background.paper,
+    border: '1px solid #ced4da',
+    fontSize: 16,
+    transition: theme.transitions.create(['border-color', 'box-shadow']), fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+    '&:focus': {
+      borderRadius: 4,
+      borderColor: '#80bdff',
+      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.25)',
+    },
+  },
+  margin:{
+    width: '100%'
   }
 });
 
@@ -42,36 +82,16 @@ class ProfilePage extends Component {
 
   state = {
     addSkill: {
-      game: '',
-      overall: '',
-      offensive: '',
-      defensive: '',
-      aggression: '',
+      game: 1,
+      overall: 1,
+      offensive: 1,
+      defensive: 1,
+      aggression: 1,
     }
-  }
-
-  constructor() {
-    super();
-
-    this.state = {
-      showMenu: false,
-    }
-
-    this.showMenu = this.showMenu.bind(this);
-  }
-
-
-  showMenu(event) {
-    event.preventDefault();
-
-    this.setState({
-      showMenu: true,
-    });
   }
 
   handleChangeFor = (propertyName, event) => {
     console.log('handleChangeFor event.currentTarget.value', event.currentTarget.value);
-    
     this.setState({
       addSkill:{
       ...this.state.addSkill,
@@ -108,46 +128,21 @@ class ProfilePage extends Component {
       <div>
         <h1 className={classes.header}>{this.props.reduxStore.user.username}'s Profile</h1>
         <h2 className="skills">Add Your Skills</h2>
-        <button className="select" 
-          style={{
-            fontSize: '2rem',
-            height: 50,
-            width: 240
-          }}
-          onClick={this.showMenu}>
-          Select Game </button>
-        {
-          this.state.showMenu
-            ? (
-              <div className="menu">
-                <button value='1' default onClick={(event) => this.handleChangeFor('game', event)}
-                  style={{
-                    height: 240,
-                    width: 160,
-                    backgroundImage: `url(https://microplay.com/media/catalog/product/cache/f3bf28a13af81a177e7f29529d01f858/6/2/6251_cover_1.jpg)`,
-                    backgroundPosition: 'center',
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat'
-                  }}></button>
-                <button value='2' onClick={(event) => this.handleChangeFor('game', event)}
-                  style={{
-                    height: 240,
-                    width: 160,
-                    backgroundImage: `url(https://images.g2a.com/newlayout/323x433/1x1x0/e1f2e4cc3323/5b4e17bbae653a58bd4ef8c7)`,
-                    backgroundPosition: 'center',
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat'
-                  }}></button>
-                <br />
-              </div>
-            )
-            : (
-              null
-            )
-        }
+        <form className={classes.root} autoComplete="off">
+          <FormControl className={classes.margin}>
+            <InputLabel htmlFor="age-customized-native-simple">Select Game</InputLabel>
+            <NativeSelect
+              onChange={(event) => this.handleChangeFor('game', event)}
+            >
+              <option value="" />
+              <option value={1}>RL</option>
+              <option value={2}>2k</option>
+            </NativeSelect>
+          </FormControl>
+        </form>
       </div>
       <h3 className={classes.skillHeader}>Overall Skills</h3>
-      <div className={classes.input}>
+      <div className={classes.input34}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <Grid container spacing={1} direction="column" alignItems="center">
@@ -180,7 +175,7 @@ class ProfilePage extends Component {
         </Grid>
       </div>
       <h3 className={classes.skillHeader}>Offensive Skills {this.props.state}</h3>
-      <div className={classes.input}>
+      <div className={classes.input34}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <Grid container spacing={1} direction="column" alignItems="center">
@@ -213,7 +208,7 @@ class ProfilePage extends Component {
         </Grid>
       </div>
       <h3 className={classes.skillHeader}>Defensive Skills {this.props.state}</h3>
-      <div className={classes.input}>
+      <div className={classes.input34}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <Grid container spacing={1} direction="column" alignItems="center">
@@ -246,7 +241,7 @@ class ProfilePage extends Component {
         </Grid>
       </div>
       <h3 className={classes.skillHeader}>Aggression Skills {this.props.state}</h3>
-      <div className={classes.input}>
+      <div className={classes.input34}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <Grid container spacing={1} direction="column" alignItems="center">
