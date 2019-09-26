@@ -14,7 +14,7 @@ router.put('/', (req, res) => {
             res.send(response.rows);
         })
         .catch(error => {
-            console.log('error accepting friend POST', error);
+            console.log('error accepting friend PUT', error);
             res.sendStatus(500);
         });
 });

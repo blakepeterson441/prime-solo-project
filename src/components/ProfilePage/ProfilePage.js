@@ -24,11 +24,16 @@ const styles = theme => ({
   input: {
     margin: 'auto',
     width: '37%',
+    color: '#0B3948',
   },
   skillHeader: {
     margin: 'auto',
     width: '37%',
-    paddingTop: '2%'
+    paddingTop: '2%',
+    color: '#0B3948',
+  },
+  numBtn: {
+    color: '#0B3948',
   }
 });
 
@@ -148,25 +153,25 @@ class ProfilePage extends Component {
             <Grid container spacing={1} direction="column" alignItems="center">
               <Grid item>
                 <ButtonGroup size="small" aria-label="small outlined button group">
-                  <Button name="overallValue" value='1' defaultChecked
+                  <Button className={classes.numBtn} name="overallValue" value='1' defaultChecked
                     onClick={(event) => this.handleChangeFor('overall', event)}>1</Button>
-                  <Button name="overallValue" value='2' defaultChecked
+                  <Button className={classes.numBtn} name="overallValue" value='2' defaultChecked
                     onClick={(event) => this.handleChangeFor('overall', event)}>2</Button>
-                  <Button name="overallValue" value='3' defaultChecked
+                  <Button className={classes.numBtn} name="overallValue" value='3' defaultChecked
                     onClick={(event) => this.handleChangeFor('overall', event)}>3</Button>
-                  <Button name="overallValue" value='4' defaultChecked
+                  <Button className={classes.numBtn} name="overallValue" value='4' defaultChecked
                     onClick={(event) => this.handleChangeFor('overall', event)}>4</Button>
-                  <Button name="overallValue" value='5' defaultChecked
+                  <Button className={classes.numBtn} name="overallValue" value='5' defaultChecked
                     onClick={(event) => this.handleChangeFor('overall', event)}>5</Button>
-                  <Button name="overallValue" value='6' defaultChecked
+                  <Button className={classes.numBtn} name="overallValue" value='6' defaultChecked
                     onClick={(event) => this.handleChangeFor('overall', event)}>6</Button>
-                  <Button name="overallValue" value='7' defaultChecked
+                  <Button className={classes.numBtn} name="overallValue" value='7' defaultChecked
                     onClick={(event) => this.handleChangeFor('overall', event)}>7</Button>
-                  <Button name="overallValue" value='8' defaultChecked
+                  <Button className={classes.numBtn} name="overallValue" value='8' defaultChecked
                     onClick={(event) => this.handleChangeFor('overall', event)}>8</Button>
-                  <Button name="overallValue" value='9' defaultChecked
+                  <Button className={classes.numBtn} name="overallValue" value='9' defaultChecked
                     onClick={(event) => this.handleChangeFor('overall', event)}>9</Button>
-                  <Button name="overallValue" value='10' defaultChecked
+                  <Button className={classes.numBtn} name="overallValue" value='10' defaultChecked
                     onClick={(event) => this.handleChangeFor('overall', event)}>10</Button>
                 </ButtonGroup>
               </Grid>
@@ -181,25 +186,25 @@ class ProfilePage extends Component {
             <Grid container spacing={1} direction="column" alignItems="center">
               <Grid item>
                 <ButtonGroup size="small" aria-label="small outlined button group">
-                  <Button name="offensiveValue" value='1' defaultChecked
+                  <Button className={classes.numBtn} name="offensiveValue" value='1' defaultChecked
                     onClick={(event) => this.handleChangeFor('offensive', event)}>1</Button>
-                  <Button name="offensiveValue" value='2' defaultChecked
+                  <Button className={classes.numBtn} name="offensiveValue" value='2' defaultChecked
                     onClick={(event) => this.handleChangeFor('offensive', event)}>2</Button>
-                  <Button name="offensiveValue" value='3' defaultChecked
+                  <Button className={classes.numBtn} name="offensiveValue" value='3' defaultChecked
                     onClick={(event) => this.handleChangeFor('offensive', event)}>3</Button>
-                  <Button name="offensiveValue" value='4' defaultChecked
+                  <Button className={classes.numBtn} name="offensiveValue" value='4' defaultChecked
                     onClick={(event) => this.handleChangeFor('offensive', event)}>4</Button>
-                  <Button name="offensiveValue" value='5' defaultChecked
+                  <Button className={classes.numBtn} name="offensiveValue" value='5' defaultChecked
                     onClick={(event) => this.handleChangeFor('offensive', event)}>5</Button>
-                  <Button name="offensiveValue" value='6' defaultChecked
+                  <Button className={classes.numBtn} name="offensiveValue" value='6' defaultChecked
                     onClick={(event) => this.handleChangeFor('offensive', event)}>6</Button>
-                  <Button name="offensiveValue" value='7' defaultChecked
+                  <Button className={classes.numBtn} name="offensiveValue" value='7' defaultChecked
                     onClick={(event) => this.handleChangeFor('offensive', event)}>7</Button>
-                  <Button name="offensiveValue" value='8' defaultChecked
+                  <Button className={classes.numBtn} name="offensiveValue" value='8' defaultChecked
                     onClick={(event) => this.handleChangeFor('offensive', event)}>8</Button>
-                  <Button name="offensiveValue" value='9' defaultChecked
+                  <Button className={classes.numBtn} name="offensiveValue" value='9' defaultChecked
                     onClick={(event) => this.handleChangeFor('offensive', event)}>9</Button>
-                  <Button name="offensiveValue" value='10' defaultChecked
+                  <Button className={classes.numBtn} name="offensiveValue" value='10' defaultChecked
                     onClick={(event) => this.handleChangeFor('offensive', event)}>10</Button>
                 </ButtonGroup>
               </Grid>
@@ -214,25 +219,25 @@ class ProfilePage extends Component {
             <Grid container spacing={1} direction="column" alignItems="center">
               <Grid item>
                 <ButtonGroup size="small" aria-label="small outlined button group">
-                  <Button name="defensiveValue" value='1' defaultChecked
+                  <Button className={classes.numBtn} name="defensiveValue" value='1' defaultChecked
                     onClick={(event) => this.handleChangeFor('defensive', event)}>1</Button>
-                  <Button name="defensiveValue" value='2' defaultChecked
+                  <Button className={classes.numBtn} name="defensiveValue" value='2' defaultChecked
                     onClick={(event) => this.handleChangeFor('defensive', event)}>2</Button>
-                  <Button name="defensiveValue" value='3' defaultChecked
+                  <Button className={classes.numBtn} name="defensiveValue" value='3' defaultChecked
                     onClick={(event) => this.handleChangeFor('defensive', event)}>3</Button>
-                  <Button name="defensiveValue" value='4' defaultChecked
+                  <Button className={classes.numBtn} name="defensiveValue" value='4' defaultChecked
                     onClick={(event) => this.handleChangeFor('defensive', event)}>4</Button>
-                  <Button name="defensiveValue" value='5' defaultChecked
+                  <Button className={classes.numBtn} name="defensiveValue" value='5' defaultChecked
                     onClick={(event) => this.handleChangeFor('defensive', event)}>5</Button>
-                  <Button name="defensiveValue" value='6' defaultChecked
+                  <Button className={classes.numBtn} name="defensiveValue" value='6' defaultChecked
                     onClick={(event) => this.handleChangeFor('defensive', event)}>6</Button>
-                  <Button name="defensiveValue" value='7' defaultChecked
+                  <Button className={classes.numBtn} name="defensiveValue" value='7' defaultChecked
                     onClick={(event) => this.handleChangeFor('defensive', event)}>7</Button>
-                  <Button name="defensiveValue" value='8' defaultChecked
+                  <Button className={classes.numBtn} name="defensiveValue" value='8' defaultChecked
                     onClick={(event) => this.handleChangeFor('defensive', event)}>8</Button>
-                  <Button name="defensiveValue" value='9' defaultChecked
+                  <Button className={classes.numBtn} name="defensiveValue" value='9' defaultChecked
                     onClick={(event) => this.handleChangeFor('defensive', event)}>9</Button>
-                  <Button name="defensiveValue" value='10' defaultChecked
+                  <Button className={classes.numBtn} name="defensiveValue" value='10' defaultChecked
                     onClick={(event) => this.handleChangeFor('defensive', event)}>10</Button>
                 </ButtonGroup>
               </Grid>
@@ -247,25 +252,25 @@ class ProfilePage extends Component {
             <Grid container spacing={1} direction="column" alignItems="center">
               <Grid item>
                 <ButtonGroup size="small" aria-label="small outlined button group">
-                  <Button name="aggressionValue" value='1' defaultChecked
+                  <Button className={classes.numBtn} name="aggressionValue" value='1' defaultChecked
                     onClick={(event) => this.handleChangeFor('aggression', event)}>1</Button>
-                  <Button name="aggressionValue" value='2' defaultChecked
+                  <Button className={classes.numBtn} name="aggressionValue" value='2' defaultChecked
                     onClick={(event) => this.handleChangeFor('aggression', event)}>2</Button>
-                  <Button name="aggressionValue" value='3' defaultChecked
+                  <Button className={classes.numBtn} name="aggressionValue" value='3' defaultChecked
                     onClick={(event) => this.handleChangeFor('aggression', event)}>3</Button>
-                  <Button name="aggressionValue" value='4' defaultChecked
+                  <Button className={classes.numBtn} name="aggressionValue" value='4' defaultChecked
                     onClick={(event) => this.handleChangeFor('aggression', event)}>4</Button>
-                  <Button name="aggressionValue" value='5' defaultChecked
+                  <Button className={classes.numBtn} name="aggressionValue" value='5' defaultChecked
                     onClick={(event) => this.handleChangeFor('aggression', event)}>5</Button>
-                  <Button name="aggressionValue" value='6' defaultChecked
+                  <Button className={classes.numBtn} name="aggressionValue" value='6' defaultChecked
                     onClick={(event) => this.handleChangeFor('aggression', event)}>6</Button>
-                  <Button name="aggressionValue" value='7' defaultChecked
+                  <Button className={classes.numBtn} name="aggressionValue" value='7' defaultChecked
                     onClick={(event) => this.handleChangeFor('aggression', event)}>7</Button>
-                  <Button name="aggressionValue" value='8' defaultChecked
+                  <Button className={classes.numBtn} name="aggressionValue" value='8' defaultChecked
                     onClick={(event) => this.handleChangeFor('aggression', event)}>8</Button>
-                  <Button name="aggressionValue" value='9' defaultChecked
+                  <Button className={classes.numBtn} name="aggressionValue" value='9' defaultChecked
                     onClick={(event) => this.handleChangeFor('aggression', event)}>9</Button>
-                  <Button name="aggressionValue" value='10' defaultChecked
+                  <Button className={classes.numBtn} name="aggressionValue" value='10' defaultChecked
                     onClick={(event) => this.handleChangeFor('aggression', event)}>10</Button>
                 </ButtonGroup>
               </Grid>

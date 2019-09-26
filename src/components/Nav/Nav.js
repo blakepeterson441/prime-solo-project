@@ -5,7 +5,6 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 
 //Material-UI Icons
-import {withStyles} from '@material-ui/core/styles';
 import UserIcon from '@material-ui/icons/Person';
 import SearchIcon from '@material-ui/icons/Search';
 import PeopleIcon from '@material-ui/icons/People';
