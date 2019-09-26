@@ -8,11 +8,8 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
-import InputBase from '@material-ui/core/InputBase';
 
 
 const styles = theme => ({
@@ -27,7 +24,7 @@ const styles = theme => ({
     margin: 'auto',
     width: '30%'
   },
-  input34: {
+  numInput: {
     margin: 'auto',
     width: '37%',
     color: '#0B3948',
@@ -135,14 +132,14 @@ class ProfilePage extends Component {
               onChange={(event) => this.handleChangeFor('game', event)}
             >
               <option value="" />
-              <option value={1}>RL</option>
-              <option value={2}>2k</option>
+              <option value={1}>Rocket League</option>
+              <option value={2}>NBA 2K20</option>
             </NativeSelect>
           </FormControl>
         </form>
       </div>
       <h3 className={classes.skillHeader}>Overall Skills</h3>
-      <div className={classes.input34}>
+      <div className={classes.numInput}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <Grid container spacing={1} direction="column" alignItems="center">
@@ -175,7 +172,7 @@ class ProfilePage extends Component {
         </Grid>
       </div>
       <h3 className={classes.skillHeader}>Offensive Skills {this.props.state}</h3>
-      <div className={classes.input34}>
+      <div className={classes.numInput}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <Grid container spacing={1} direction="column" alignItems="center">
@@ -208,7 +205,7 @@ class ProfilePage extends Component {
         </Grid>
       </div>
       <h3 className={classes.skillHeader}>Defensive Skills {this.props.state}</h3>
-      <div className={classes.input34}>
+      <div className={classes.numInput}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <Grid container spacing={1} direction="column" alignItems="center">
@@ -241,7 +238,7 @@ class ProfilePage extends Component {
         </Grid>
       </div>
       <h3 className={classes.skillHeader}>Aggression Skills {this.props.state}</h3>
-      <div className={classes.input34}>
+      <div className={classes.numInput}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <Grid container spacing={1} direction="column" alignItems="center">
