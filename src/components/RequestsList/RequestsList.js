@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import './RequestsList.css';
 
 //Material UI
 import CheckCircleOutline from '@material-ui/icons/CheckCircleOutline';
@@ -15,8 +16,8 @@ class RequestsList extends Component {
                     <div>
                         <p>Username: <b>{this.props.player.username}</b></p>
                     </div>
-                    <Tooltip title="Add"><button onClick={() => this.props.acceptRequest(this.props.player)}><CheckCircleOutline /></button></Tooltip>
-                    <Tooltip title="Decline"><button onClick={() => this.props.deletePlayer(this.props.player)}><RemoveCircleOutline /></button></Tooltip>
+                    <Tooltip title="Add"><button className="button" onClick={() => this.props.acceptRequest(this.props.player)}><CheckCircleOutline /></button></Tooltip>
+                    <Tooltip title="Decline"><button className="button" onClick={() => this.props.deletePlayer(this.props.player)}><RemoveCircleOutline /></button></Tooltip>
                 </li>
             </>
         )

@@ -1,0 +1,9 @@
+.button:hover {
+    background-color: rgb(230, 227, 238);
+    cursor: pointer;
+}
+
+.button {
+    background-color: #D0CDD7;
+    color: #0B3948;
+}
