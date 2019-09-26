@@ -4,10 +4,10 @@ const router = express.Router();
 
 
 
-router.post('/', (req, res) => {
-    console.log('POST acceptFriend server', req.body);
-    const sqlText = `INSERT INTO friends (user_id_one, user_id_two, approved, approved_date)
-                        VALUES ($1, $2, 'TRUE', now());`;
+router.put('/', (req, res) => {
+    console.log('PUT acceptFriend server', req.body);
+    const sqlText = `UPDATE friends SET approved='TRUE'
+                        WHERE user_id_two = $1 AND user_id_one = $2;`;
     const sqlValues = [req.body.user1, req.body.user2]
     pool.query(sqlText, sqlValues)
         .then(response => {

@@ -5,7 +5,7 @@ function* acceptFriend(action) {
     console.log('fetchRequests action.playload', action.payload);
 
     try {
-        const response = yield axios.post(`/api/friends/accept`, action.payload);
+        const response = yield axios.put(`/api/friends/accept`, action.payload);
         console.log('in acceptFriend: response.data is:', response.data);
 
         yield put({

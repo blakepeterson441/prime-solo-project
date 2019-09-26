@@ -3,9 +3,6 @@ const pool = require('../modules/pool');
 const router = express.Router();
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
-/**
- * GET route template
- */
 router.get('/', rejectUnauthenticated, (req, res) => {
   console.log('GET friends server', req.user);
   const sqlText = `(select username, friends.approved, friends.user_id_two as friend_ID from "users" 
