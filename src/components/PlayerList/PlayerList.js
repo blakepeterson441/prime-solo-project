@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './PlayerList.css';
+
+// Material UI
+import CheckCircleOutline from '@material-ui/icons/CheckCircleOutline';
+import Tooltip from '@material-ui/core/Tooltip';
 
 class PlayerList extends Component {
 
@@ -15,7 +20,7 @@ class PlayerList extends Component {
                         <p>Defensive Skill: <b>{this.props.player.defensive_skill}</b></p>
                         <p>Aggression: <b>{this.props.player.aggression}</b></p>
                     </div>
-                   <button onClick={() => this.props.addPlayer(this.props.player)}>Add</button>
+                    <Tooltip title="Add"><button className="button" onClick={() => this.props.acceptRequest(this.props.player)}><CheckCircleOutline /></button></Tooltip>
                 </li>
             </>
         )

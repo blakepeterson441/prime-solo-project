@@ -77,11 +77,11 @@ class SearchPage extends Component {
 
   state = {
     playerSkill: {
-      overall: 1,
-      offensive: 1,
-      defensive: 1,
-      aggression: 1,
-      game: 1,
+      overall: '1',
+      offensive: '1',
+      defensive: '1',
+      aggression: '1',
+      game: 'Rocket League',
     }
   };
 
@@ -116,8 +116,8 @@ class SearchPage extends Component {
               onChange={(event) => this.handleChangeFor('game', event)}
             >
               <option value="" />
-              <option value={1}>Rocket League</option>
-              <option value={2}>NBA 2K20</option>
+              <option value='Rocket League'>Rocket League</option>
+              <option value='NBA'>NBA 2K20</option>
             </NativeSelect>
           </FormControl>
         </form>

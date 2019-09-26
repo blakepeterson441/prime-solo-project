@@ -14,9 +14,11 @@ ul {
 }
 
 li {
+    border-radius: 4px;
     background-color: #ACB0BD;
     color: #0B3948;
     list-style-type: none;
+    width: 18%;
 }
 
 .select {

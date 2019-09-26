@@ -79,11 +79,11 @@ class ProfilePage extends Component {
 
   state = {
     addSkill: {
-      game: 1,
-      overall: 1,
-      offensive: 1,
-      defensive: 1,
-      aggression: 1,
+      game: '1',
+      overall: '1',
+      offensive: '1',
+      defensive: '1',
+      aggression: '1',
     }
   }
 
@@ -132,8 +132,8 @@ class ProfilePage extends Component {
               onChange={(event) => this.handleChangeFor('game', event)}
             >
               <option value="" />
-              <option value={1}>Rocket League</option>
-              <option value={2}>NBA 2K20</option>
+              <option value='1'>Rocket League</option>
+              <option value='2'>NBA 2K20</option>
             </NativeSelect>
           </FormControl>
         </form>
