@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import './ProfilePage.css';
-//import ProfileUsername from '../ProfileUsername/ProfileUsername';
 
 // Material UI
 import { withStyles } from '@material-ui/core/styles';
@@ -24,12 +23,11 @@ const styles = theme => ({
   },
   input: {
     margin: 'auto',
-    width: '50%',
+    width: '37%',
   },
   skillHeader: {
     margin: 'auto',
-    width: '50%',
-    textAlign: 'left',
+    width: '37%',
     paddingTop: '2%'
   }
 });
@@ -67,7 +65,7 @@ class ProfilePage extends Component {
   }
 
   handleChangeFor = (propertyName, event) => {
-    console.log('handleChangeFor event.target.value', event.currentTarget.value);
+    console.log('handleChangeFor event.currentTarget.value', event.currentTarget.value);
     
     this.setState({
       addSkill:{
@@ -104,7 +102,7 @@ class ProfilePage extends Component {
       <>
       <div>
         <h1 className={classes.header}>{this.props.reduxStore.user.username}'s Profile</h1>
-        <h2 className="skills">Skills</h2>
+        <h2 className="skills">Add Your Skills</h2>
         <button className="select" 
           style={{
             fontSize: '2rem',
@@ -143,8 +141,8 @@ class ProfilePage extends Component {
             )
         }
       </div>
-      <h3 className="skills" className={classes.skillHeader}>Overall Skills</h3>
-      <div className="skills" className={classes.input}>
+      <h3 className={classes.skillHeader}>Overall Skills</h3>
+      <div className={classes.input}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <Grid container spacing={1} direction="column" alignItems="center">
@@ -176,8 +174,8 @@ class ProfilePage extends Component {
           </Grid>
         </Grid>
       </div>
-      <h3 className="skills" className={classes.skillHeader}>Offensive Skills {this.props.state}</h3>
-      <div className="skills" className={classes.input}>
+      <h3 className={classes.skillHeader}>Offensive Skills {this.props.state}</h3>
+      <div className={classes.input}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <Grid container spacing={1} direction="column" alignItems="center">
@@ -209,8 +207,8 @@ class ProfilePage extends Component {
           </Grid>
         </Grid>
       </div>
-      <h3 className="skills" className={classes.skillHeader}>Defensive Skills {this.props.state}</h3>
-      <div className="skills" className={classes.input}>
+      <h3 className={classes.skillHeader}>Defensive Skills {this.props.state}</h3>
+      <div className={classes.input}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <Grid container spacing={1} direction="column" alignItems="center">
@@ -242,8 +240,8 @@ class ProfilePage extends Component {
           </Grid>
         </Grid>
       </div>
-      <h3 className="skills" className={classes.skillHeader}>Aggression Skills {this.props.state}</h3>
-      <div className="skills" className={classes.input}>
+      <h3 className={classes.skillHeader}>Aggression Skills {this.props.state}</h3>
+      <div className={classes.input}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <Grid container spacing={1} direction="column" alignItems="center">
@@ -275,7 +273,7 @@ class ProfilePage extends Component {
           </Grid>
         </Grid>
       </div>
-        <Button variant="outlined" className={classes.button} onClick={this.handleSubmit}>Submit</Button>
+      <Button variant="outlined" className={classes.button} onClick={this.handleSubmit}>Submit</Button>
       </>
     );
   }

@@ -8,8 +8,8 @@ import fetchRequests from './fetchRequestsSaga';
 import setSkills from './setSkillsSaga';
 import addFriends from './addFriendsSaga';
 import deleteFriends from './deleteFriendsSaga';
-//import editSkills from './editSkillsSaga';
 import userSkills from './userSkillsSaga';
+import acceptFriend from './acceptFriendSaga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -25,7 +25,7 @@ export default function* rootSaga() {
   yield takeEvery('ADD_SKILLS', setSkills);
   yield takeEvery('ADD_FRIEND', addFriends);
   yield takeEvery('REMOVE_FRIEND', deleteFriends);
-  //yield takeEvery('EDIT_SKILLS', editSkills);
+  yield takeEvery('ACCEPT_REQUEST', acceptFriend);
   yield takeEvery('SHOW_SKILLS', userSkills);
   yield all([
     loginSaga(),

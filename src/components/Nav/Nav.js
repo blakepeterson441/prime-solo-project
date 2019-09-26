@@ -12,11 +12,6 @@ import PeopleIcon from '@material-ui/icons/People';
 import Tooltip from '@material-ui/core/Tooltip';
 import SupervisedUserCircle from '@material-ui/icons/SupervisedUserCircle';
 
-const styles = theme => ({
-  icons: {
-    color: 'pink'
-  }
-})
 
 
 class Nav extends Component {
@@ -26,7 +21,6 @@ class Nav extends Component {
   }
 
   render() {
-    const {classes} = this.props;
     return(
       <div className="nav">
         <Link to="/landingpage">
@@ -77,4 +71,4 @@ const mapStateToProps = reduxStore => ({
   reduxStore
 });
 
-export default withStyles(styles)(connect(mapStateToProps)(Nav));
+export default connect(mapStateToProps)(Nav);

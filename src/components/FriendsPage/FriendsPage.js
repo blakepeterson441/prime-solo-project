@@ -33,6 +33,14 @@ class FriendsPage extends Component {
 
   acceptRequest = (player) => {
     console.log('ACCEPT REQUEST');
+    let data = {
+      user1: this.props.reduxStore.user.id,
+      user2: player.friend_id
+    }
+    this.props.dispatch({
+      type: 'ACCEPT_REQUEST',
+      payload: data
+    })
   }
 
   checkRequests = (player, index) => {
