@@ -3,7 +3,7 @@ const pool = require('../modules/pool');
 const router = express.Router();
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
-router.get('/:id', rejectUnauthenticated, (req, res) => {
+router.get('/', rejectUnauthenticated, (req, res) => {
     console.log('GET friends server', req.user);
     const sqlText = `SELECT * FROM user_games WHERE user_id=$1 AND game_id=$2;`;
     const sqlValues = [req.query.id, req.query.gameId];
