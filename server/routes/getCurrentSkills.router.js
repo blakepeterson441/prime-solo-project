@@ -4,7 +4,7 @@ const router = express.Router();
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
 router.get('/', rejectUnauthenticated, (req, res) => {
-    console.log('GET friends server', req.query.gameId);
+    console.log('GET currentSkills server', req.query.game);
     const sqlText = `SELECT users.id, users.username, games.name, user_games.overall_skill, 
                     user_games.offensive_skill, user_games.defensive_skill, user_games.aggression
                     FROM games
@@ -22,7 +22,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
             res.send(response.rows[0])
         })
         .catch(error => {
-            console.log('error getting current pcn', error);
+            console.log('error getting current skills', error);
             res.sendStatus(500);
         })
 })
