@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import ProfileSkills from '../ProfileSkills/ProfileSkills';
 import './ProfilePage.css';
 
 // Material UI
@@ -115,13 +116,18 @@ class ProfilePage extends Component {
       type: 'GET_USERNAME',
       payload: this.props.reduxStore.user.username
     })
-  }
-
-  componentDidUpdate = () => {
     this.props.dispatch({
       type: 'FETCH_CURRENT_SKILLS',
-      payload: this.props.reduxStore.user
+      payload: this.props.playerSkill
     })
+  }
+
+  checkSkills = (player, index) => {
+    if (this.props.reduxStore.user.id === player.id) {
+      return <ProfileSkills player={player} key={index} />;
+    } else {
+      return (<></>);
+    }
   }
 
   render() {
@@ -129,6 +135,10 @@ class ProfilePage extends Component {
     
     return (
       <>
+        <ul>
+          {this.props.reduxStore.fetchSkillsReducer.map((player, index) => this.checkSkills(player, index)
+          )}
+        </ul>
       <div>
         <h1 className={classes.header}>{this.props.reduxStore.user.username}'s Profile</h1>
         <h2 className="skills">Add Your Skills</h2>
