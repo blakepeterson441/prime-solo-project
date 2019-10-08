@@ -4,9 +4,19 @@ const router = express.Router();
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
 router.get('/', rejectUnauthenticated, (req, res) => {
-    console.log('GET friends server', req.user);
-    const sqlText = `SELECT * FROM user_games WHERE user_id=$1 AND game_id=$2;`;
-    const sqlValues = [req.query.id, req.query.gameId];
+    console.log('GET friends server', req.query.gameId);
+    const sqlText = `SELECT users.id, users.username, games.name, user_games.overall_skill, 
+                    user_games.offensive_skill, user_games.defensive_skill, user_games.aggression
+                    FROM games
+                    JOIN user_games ON user_games.game_id = games.id
+                    JOIN users ON users.id = user_games.user_id
+                    WHERE users.id = $1
+                    AND games.name = $2
+                    AND overall_skill = $3
+                    AND offensive_skill = $4
+                    AND defensive_skill = $5
+                    AND aggression = $6;`;
+    const sqlValues = [req.query.id, req.query.game, req.query.overall, req.query.offensive, req.query.defensive, req.query.aggression];
     pool.query(sqlText, sqlValues)
         .then(response => {
             res.send(response.rows[0])
