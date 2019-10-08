@@ -117,6 +117,13 @@ class ProfilePage extends Component {
     })
   }
 
+  componentDidUpdate = () => {
+    this.props.dispatch({
+      type: 'FETCH_CURRENT_SKILLS',
+      payload: this.props.reduxStore.user
+    })
+  }
+
   render() {
     const {classes} = this.props;
     

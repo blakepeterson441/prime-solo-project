@@ -1,5 +1,5 @@
 // This reducer will store our list of skills in the reduxStore
-const fetchSkillsReducer = (state =[], action) => {
+const fetchSkillsReducer = (state = [], action) => {
     switch (action.type){
         case 'FETCH_SKILLS':
             return action.payload;
