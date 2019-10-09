@@ -113,10 +113,6 @@ class ProfilePage extends Component {
   componentDidMount = () => {
     console.log('componentDidMount', this.props.reduxStore.user);
     this.props.dispatch({
-      type: 'GET_USERNAME',
-      payload: this.props.reduxStore.user.username
-    })
-    this.props.dispatch({
       type: 'FETCH_CURRENT_SKILLS',
       payload: this.props.playerSkill
     })
