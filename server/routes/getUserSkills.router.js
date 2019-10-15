@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
             console.log('error making userSkills get', error);
             res.sendStatus(500);
         }
-        );
+    );
 });
 
 module.exports = router;

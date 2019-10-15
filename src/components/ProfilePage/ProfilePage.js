@@ -113,12 +113,8 @@ class ProfilePage extends Component {
   componentDidMount = () => {
     console.log('componentDidMount', this.props.reduxStore.user);
     this.props.dispatch({
-      type: 'GET_USERNAME',
-      payload: this.props.reduxStore.user.username
-    })
-    this.props.dispatch({
       type: 'FETCH_CURRENT_SKILLS',
-      payload: this.props.playerSkill
+      payload: this.props.reduxStore.user.id
     })
   }
 
@@ -135,12 +131,12 @@ class ProfilePage extends Component {
     
     return (
       <>
+      <div>
+        <h1 className={classes.header}>{this.props.reduxStore.user.username}'s Profile</h1>
         <ul>
           {this.props.reduxStore.fetchSkillsReducer.map((player, index) => this.checkSkills(player, index)
           )}
         </ul>
-      <div>
-        <h1 className={classes.header}>{this.props.reduxStore.user.username}'s Profile</h1>
         <h2 className="skills">Add Your Skills</h2>
         <form className={classes.root} autoComplete="off">
           <FormControl className={classes.margin}>

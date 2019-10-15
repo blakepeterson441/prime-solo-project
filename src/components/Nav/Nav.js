@@ -45,11 +45,11 @@ class Nav extends Component {
                   <SearchIcon />
                 </Link>
               </Tooltip>
-              <Tooltip title="Admin">
+              {/* <Tooltip title="Admin">
                 <Link className="nav-link" to="/admin">
                   <SupervisedUserCircle />
                 </Link>
-              </Tooltip>
+              </Tooltip> */}
               <LogOutButton className="nav-link"/>
             </>
           )}
